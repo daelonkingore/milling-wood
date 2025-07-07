@@ -3,6 +3,11 @@ import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { ref } from 'vue'
 
+const imageFiles = import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}');
+const myImages = Object.keys(imageFiles).map((key) => key.replace('..', 'src'));
+
+console.log(myImages);
+
 const currentSlide = ref(0)
 
 const slideTo = (nextSlide) => (currentSlide.value = nextSlide)
@@ -13,7 +18,7 @@ const galleryConfig = {
   slideEffect: 'fade',
   mouseDrag: false,
   touchDrag: false,
-  height: 300,
+  height: 600,
 }
 
 const thumbnailsConfig = {
@@ -23,18 +28,32 @@ const thumbnailsConfig = {
   touchDrag: false,
   gap: 10,
 }
-
-const images = Array.from({ length: 10 }, (_, index) => ({
-  id: index + 1,
-  url: `https://picsum.photos/seed/${Math.random()}/700/300`,
-}))
 </script>
 
 <template>
-  <div class="center-container">
-    <Carousel id="gallery" v-bind="galleryConfig" v-model="currentSlide">
-      <Slide v-for="image in images" :key="image.id">
-        <img :src="image.url" alt="Gallery Image" class="gallery-image" />
+  <div class="carousel-container">
+    <div class="center-container">
+      <Carousel id="gallery" v-bind="galleryConfig" v-model="currentSlide">
+        <Slide v-for="(image, index) in myImages" :key="index">
+          <img :src="image" :alt="'Gallery Image ' + (index + 1)" class="gallery-image" />
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
+
+    <Carousel id="thumbnails" v-bind="thumbnailsConfig" v-model="currentSlide">
+      <Slide v-for="(image, index) in myImages" :key="index">
+        <template #default="{ currentIndex, isActive }">
+          <div
+            :class="['thumbnail', { 'is-active': isActive }]"
+            @click="slideTo(currentIndex)"
+          >
+            <img :src="image" alt="Thumbnail Image" class="thumbnail-image" />
+          </div>
+        </template>
       </Slide>
 
       <template #addons>
@@ -42,29 +61,9 @@ const images = Array.from({ length: 10 }, (_, index) => ({
       </template>
     </Carousel>
   </div>
-
-  <Carousel id="thumbnails" v-bind="thumbnailsConfig" v-model="currentSlide">
-    <Slide v-for="image in images" :key="image.id">
-      <template #default="{ currentIndex, isActive }">
-        <div
-          :class="['thumbnail', { 'is-active': isActive }]"
-          @click="slideTo(currentIndex)"
-        >
-          <img :src="image.url" alt="Thumbnail Image" class="thumbnail-image" />
-        </div>
-      </template>
-    </Slide>
-
-    <template #addons>
-      <Navigation />
-    </template>
-  </Carousel>
 </template>
 
 <style scoped>
-:root {
-  /* background-color: #242424; */
-}
 
 .center-container {
   display: flex;
@@ -80,11 +79,15 @@ img {
   border-radius: 8px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .gallery-image {
   border-radius: 16px;
+  object-fit: contain;
+}
+
+.thumbnail-image {
+  object-fit: cover;
 }
 
 #thumbnails {

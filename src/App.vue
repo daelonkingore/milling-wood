@@ -5,14 +5,16 @@ import Description from './components/Description.vue'
 import Wood from './components/Wood.vue'
 import Services from './components/Services.vue'
 import Contacts from './components/Contacts.vue'
+import Gallery from './components/Gallery.vue'
 </script>
 
 <template>
-  <v-app>
+  <Navigation id="top">
     <div>
-      <Navigation id="top"></Navigation>
 
-      <h1>Milling By Darrell</h1>
+      <h1>Milling By Darrell</h1><br>
+
+      <Gallery></Gallery>
 
       <div class="bottom-spacing">
         <CarouselElem></CarouselElem>
@@ -35,7 +37,7 @@ import Contacts from './components/Contacts.vue'
       </div>
       <a id="top-link" href="#top">Back to Top</a>
     </div>
-  </v-app>
+  </Navigation>
 </template>
 
 <style scoped>

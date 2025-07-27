@@ -1,4 +1,3 @@
-
 <script setup>
   import { ref, watch } from 'vue'
 
@@ -29,16 +28,16 @@
   })
 </script>
 
+<!-- TODO: update nav with routes to all the pages. -->
+
 <template>
     <v-app>
         <v-app-bar color="teal-darken-4">
             <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer" v-if="$vuetify.display.mobile"></v-app-bar-nav-icon>
 
-            <v-tabs v-else
-                v-model="tab"
-            >
-                <v-tab value="one">Item One</v-tab>
-                <v-tab value="two">Item Two</v-tab>
+            <v-tabs v-else v-model="tab">
+                <v-tab to="/">Home</v-tab>
+                <v-tab to="/gallery">Gallery</v-tab>
                 <v-tab value="three">Item Three</v-tab>
             </v-tabs>
 
@@ -56,7 +55,7 @@
         </v-navigation-drawer>
 
         <v-main>
-            <slot></slot>
+            <router-view />
         </v-main>
     </v-app>
 </template>

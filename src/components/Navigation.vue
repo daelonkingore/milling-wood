@@ -13,32 +13,26 @@
     {
       title: 'Milling By Darrell',
       link: '/',
-      val: 1,
     },
     {
       title: 'Services',
       link: '/services',
-      val: 2,
     },
     {
       title: 'About Us',
       link: '/desc',
-      val: 3,
     },
     {
       title: 'Wood',
       link: '/wood',
-      val: 4,
     },
     {
       title: 'Contacts',
       link: '/contacts',
-      val: 5,
     },
     {
       title: 'Gallery',
       link: '/gallery',
-      val: 6,
     },
   ]
 </script>

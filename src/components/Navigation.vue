@@ -1,57 +1,68 @@
 <script setup>
   import { ref, watch } from 'vue'
 
-  const items = [
-    {
-      title: 'Services',
-      value: 'services',
-    },
-    {
-      title: 'Wood',
-      value: 'wood',
-    },
-    {
-      title: 'Who We Are',
-      value: 'who',
-    },
-    {
-      title: 'Contact Us',
-      value: 'contact',
-    },
-  ]
-
   const drawer = ref(false)
   const group = ref(null)
+  const tab = ref(null)
 
   watch(group, () => {
     drawer.value = false
   })
-</script>
 
-<!-- TODO: update nav with routes to all the pages. -->
+  const navItems = [
+    {
+      title: 'Milling By Darrell',
+      link: '/',
+      val: 1,
+    },
+    {
+      title: 'Services',
+      link: '/services',
+      val: 2,
+    },
+    {
+      title: 'About Us',
+      link: '/desc',
+      val: 3,
+    },
+    {
+      title: 'Wood',
+      link: '/wood',
+      val: 4,
+    },
+    {
+      title: 'Contacts',
+      link: '/contacts',
+      val: 5,
+    },
+    {
+      title: 'Gallery',
+      link: '/gallery',
+      val: 6,
+    },
+  ]
+</script>
 
 <template>
     <v-app>
         <v-app-bar color="teal-darken-4">
-            <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer" v-if="$vuetify.display.mobile"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon v-if="$vuetify.display.mobile" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
             <v-tabs v-else v-model="tab">
-                <v-tab to="/">Home</v-tab>
-                <v-tab to="/gallery">Gallery</v-tab>
-                <v-tab value="three">Item Three</v-tab>
+                <v-tab v-for="(item, i) in navItems" :key="i" :to="item.link" :value="i">{{ item.title }}</v-tab>
             </v-tabs>
 
-            <v-toolbar-title><span  class="float-left">Milling By Darrell</span></v-toolbar-title>
+            <v-toolbar-title><span  class="float-left"></span></v-toolbar-title>
         </v-app-bar>
 
         <v-navigation-drawer v-if="$vuetify.display.mobile"
             v-model="drawer"
-            :location="$vuetify.display.mobile ? 'bottom' : undefined"
+            :location="$vuetify.display.mobile ? 'top' : undefined"
             temporary
         >
-            <v-list
-            :items="items"
-            ></v-list>
+            <v-list>
+              <v-list-item v-for="(item, i) in navItems" :key="i" :to="item.link" link :title="item.title"></v-list-item>
+            </v-list>
         </v-navigation-drawer>
 
         <v-main>

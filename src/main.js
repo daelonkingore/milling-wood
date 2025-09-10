@@ -17,6 +17,7 @@ const vuetify = createVuetify({
       mdi,
     },
   },
+  //theme: false
 })
 
 // mount app

@@ -7,48 +7,46 @@ import Contacts from './Contacts.vue'
 import Gallery from './Gallery.vue'
 </script>
 
-<!-- TODO: Create a Home page and reduce size of this page, we're turning this single page applicaiton to a multi! Components will have their own Routes -->
-
 <template>
-        <div>
-            <h1>Milling By Darrell</h1><br>
+    <h1>Milling By Darrell</h1><br>
 
-            <Gallery></Gallery>
+    <div class="bottom-spacing">
+        <Gallery></Gallery>
+    </div>
 
-            <div class="bottom-spacing">
-                <CarouselElem></CarouselElem>
-            </div>
+    <div class="bottom-spacing">
+        <CarouselElem></CarouselElem>
+    </div>
 
-            <div id="services" class="bottom-spacing">
-            <Services></Services>
-            </div>
-            
-            <div id="wood" class="bottom-spacing">
-                <Wood></Wood>
-            </div>
-            
-            <div id="desc" class="bottom-spacing">
-            <Description></Description>
-            </div>
+    <div id="services" class="bottom-spacing">
+        <Services></Services>
+    </div>
+    
+    <div id="wood" class="bottom-spacing">
+        <Wood></Wood>
+    </div>
+    
+    <div id="desc" class="bottom-spacing">
+    <Description></Description>
+    </div>
 
-            <div id="contacts" class="bottom-spacing">
-                <Contacts></Contacts>
-            </div>
-            <a id="top-link" href="#top">Back to Top</a>
-        </div>
+    <div id="contacts" class="bottom-spacing">
+        <Contacts></Contacts>
+    </div>
+    <a id="top-link" href="#top">Back to Top</a>
 </template>
 
 <style scoped>
     .bottom-spacing {
-    margin-bottom: 100px;
+        margin-bottom: 100px;
     }
 
     #top-link {
-    color: #ddd;
+        color: #ddd;
     }
 
     #top-link:hover {
-    color: #ddd;
-    background-color: #5b542d;
+        color: #ddd;
+        background-color: #5b542d;
     }
 </style>

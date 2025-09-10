@@ -6,8 +6,6 @@ import { ref } from 'vue'
 const imageFiles = import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}');
 const myImages = Object.keys(imageFiles).map((key) => key.replace('..', 'src'));
 
-console.log(myImages);
-
 const currentSlide = ref(0)
 
 const slideTo = (nextSlide) => (currentSlide.value = nextSlide)

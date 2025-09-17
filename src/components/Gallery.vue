@@ -36,29 +36,21 @@ function showDialog(event) {
         md="4"
         lg="3"
       >
-        <v-sheet class="ma-2 pa-2 thumbnail d-flex justify-center align-center" :elevation="10" rounded v-on:click="showDialog($event)">
-          <v-img :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image" cover/>
+        <v-sheet class="ma-2 pa-2 thumbnail d-flex justify-center align-center" :elevation="10" rounded>
+          <v-img :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image" cover v-on:click="showDialog($event)"/>
         </v-sheet>
       </v-col>
     </v-row>
   </v-container>
 
-  <v-dialog v-model="dialogVisible">
-    <v-container class="pa-0 ma-0">
-      <v-row>
-        <!-- <v-col cols="4"></v-col> -->
-        <v-col>
-          <v-card>
-            <v-img :src="imgForDialog" contain height="80vh"></v-img>
-            <v-card-actions>
-              <v-spacer></v-spacer>
-              <v-btn text @click="dialogVisible = false; console.log(dialog)">Close</v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-        <!-- <v-col cols="4"></v-col> -->
-      </v-row>
-    </v-container>
+  <v-dialog v-model="dialogVisible" class="justify-center align-center" width="60%">
+    <v-card class="ma-0 pa-0">
+      <v-img :src="imgForDialog" contain height="80vh"></v-img>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn text @click="dialogVisible = false; console.log(dialog)">Close</v-btn>
+      </v-card-actions>
+    </v-card>
   </v-dialog>
 </template>
 
@@ -73,8 +65,7 @@ function showDialog(event) {
 
 img {
   border-radius: 8px;
-  width: 100%;
-  height: 100%;
+  display:block;
 }
 
 .thumbnail {

@@ -1,18 +1,53 @@
 <template>
     <div>
         <h2>Services</h2>
-        <table class="center">
-            <thead>
-                <tr>
-                    <th>Pricing</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>$75 an hour for logs 25 inches or less. $100 an hour for logs greater than 25 inches.</td></tr>
-                <tr><td>$100 for the chain.</td></tr>
-                <tr><td>If the job is outside of the Springfield, Ozark, or Nixa MO area, travel expenses are added.</td></tr>
-            </tbody>
-        </table>
+        <v-container id="services-container">
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-card variant="outlined" class="services-card"
+                        title="Pricing & Dimensions">
+                        <v-card-text>
+                            <b>$75</b> an hour for logs 25 inches or less. <b>$100</b> an hour for logs greater than 25 inches.
+                            <br><b>$100</b> for the chain.
+                            <br>2 hour minimum.
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <span>Insert pic here</span>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-card variant="outlined" class="services-card"
+                        title="Travel">
+                        <v-card-text>
+                            If the job is outside of the Springfield, Ozark, or Nixa MO area, travel expenses are added based on gas and time taken.
+                            <br>If travel time is longer than 2 hours, it is unlikely we will make the trip, but feel free to ask.
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <span>Insert pic here</span>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="12" md="6">
+                    <v-card variant="outlined" class="services-card"
+                        title="Wood Services">
+                        <v-card-text>
+                            <br>Can mill up to [dimension-needed]
+                            <br>This is a a one man milling operation, so we <b>do not offer tree felling services.</b>
+                            However, if you have a tree down or logs to process, please contact us!
+                            <br>We offer milling on-site, we can take your logs, or you can drop them off to mill. 
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+                <v-col cols="12" md="6">
+                    <span>Insert pic here</span>
+                </v-col>
+            </v-row>
+        </v-container>
     </div>
 </template>
 

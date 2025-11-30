@@ -27,7 +27,7 @@
       link: '/wood',
     },
     {
-      title: 'Contacts',
+      title: 'Contact',
       link: '/contacts',
     },
     {
@@ -59,7 +59,7 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-main>
+        <v-main id="background">
             <router-view />
         </v-main>
     </v-app>

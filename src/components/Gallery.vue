@@ -13,50 +13,54 @@ let selectedCollection = ref('Wood Slabs');
 let imgForDialog = ref(null);
 let dialogVisible = ref(false);
 
-// TODO: figure out how to resize the imgs to fit better
 function showDialog(event) {
   imgForDialog = event.originalTarget.src;
   dialogVisible.value = true;
+
+  // Pre-load image to get dimensions
+  const img = new Image();
+  img.src = imageUrl;
+  img.onload = () => {
+    const maxWidth = window.innerWidth * 0.8;
+    this.dialogWidth = Math.min(img.width, maxWidth);
+  };
 }
 </script>
 
 <template>
-  <v-select
+  <v-select class="red"
     label="Choose a Collection"
     :items="collections"
     item-title="collectionTitle"
     v-model="selectedCollection"
   ></v-select>
-  <v-container fluid class="bg-surface-variant">
-    <v-row no-gutters>
-      <v-col class="col-width"
+  <v-container fluid class="bg-surface-variant transCon">
+    <v-row dense>
+      <v-col
         v-for="(image, index) in collections.find(e => e.collectionTitle === selectedCollection).collectionValue" :key="index"
         cols="12"
         sm="6"
         md="4"
         lg="3"
       >
-        <v-sheet class="ma-2 pa-2 thumbnail d-flex justify-center align-center" :elevation="10" rounded>
-          <v-img :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image" cover v-on:click="showDialog($event)"/>
-        </v-sheet>
+          <v-img rounded d-flex :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image ma-2 pa-2 d-flex justify-center align-center" cover v-on:click="showDialog($event)"/>
       </v-col>
     </v-row>
   </v-container>
 
-  <v-dialog v-model="dialogVisible" class="justify-center align-center" width="60%">
-    <v-card class="ma-0 pa-0">
-      <v-img :src="imgForDialog" contain height="80vh"></v-img>
-      <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn text @click="dialogVisible = false; console.log(dialog)">Close</v-btn>
-      </v-card-actions>
-    </v-card>
+  <v-dialog v-model="dialogVisible" class="justify-center align-center rounded-lg" max-width="60%">
+      <v-img height="90vh" :src="imgForDialog" contain @click="dialogVisible = false;" class="rounded-lg"></v-img>
   </v-dialog>
 </template>
 
 <style scoped>
-.col-width { 
-  width: 50vh;
+.transCon {
+  background-color: transparent !important;
+}
+
+#imgSelect {
+  color: pink;
+  background-color: blue !important;
 }
 
 .maxImgHeight {
@@ -65,38 +69,22 @@ function showDialog(event) {
 
 img {
   border-radius: 8px;
-  display:block;
-}
-
-.thumbnail {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.3s ease-in-out;
+  display: block;
 }
 
 .thumbnail-image {
-  object-fit: cover;
-  width: 100%;
-}
-
-.thumbnail.is-active,
-.thumbnail:hover {
-  opacity: 1;
-}
-
-.gallery-image {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
+  width: 100%;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
+  object-fit: cover;
+  width: 100%;
 }
 
-.gallery-image.is-active,
-.gallery-image:hover {
+.thumbnail-image.is-active,
+.thumbnail-image:hover {
   opacity: 1;
+  border: 1px solid #20532b;
 }
 </style>

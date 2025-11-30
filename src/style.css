@@ -1,3 +1,25 @@
+/* Services */
+
+.v-card-text {
+  height: 115px;
+  overflow-y: auto;
+}
+
+.services-card {
+  border-radius: 20px;
+  background-color: #5a421d /* #644920*/
+}
+
+#services-container {
+  max-width: 1250px;
+}
+
+/* App */
+
+.v-application {
+  --v-theme-background: #441010; /* Set a custom background color for the application */
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -6,11 +28,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('assets/stacked-waves-haikei.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white;
+  color: rgb(139, 78, 78);
+  font-size: 18px;
 }
 
 a {
@@ -19,7 +38,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #c6c7d6;
 }
 
 body {
@@ -40,21 +59,15 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0px;
   text-align: center;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+#background {
+  background-image: url('assets/stacked-waves-haikei.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

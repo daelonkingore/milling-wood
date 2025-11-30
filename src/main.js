@@ -17,7 +17,18 @@ const vuetify = createVuetify({
       mdi,
     },
   },
-  //theme: false
+  //theme: false,
+  theme: {
+    defaultTheme: 'dark',
+    themes: {
+      dark: {
+        light: false,
+        colors: {
+        },
+      },
+    },
+    dark: true,
+  },
 })
 
 // mount app

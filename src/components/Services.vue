@@ -3,7 +3,7 @@
         <h2>Services</h2>
         <v-container id="services-container">
             <v-row class="services-row">
-                <v-col cols="12" md="6" class="d-flex align-center">
+                <v-col cols="12" md="6" class="d-flex align-center" order="1">
                     <v-card variant="outlined" class="services-card"
                         title="Pricing & Dimensions">
                         <v-card-text>
@@ -13,15 +13,13 @@
                         </v-card-text>
                     </v-card>
                 </v-col>
-                <v-col cols="12" md="6" class="d-flex justify-center">
-                    <img max-width="100%" contain class="services-img" src="../assets/people/group_pic1.jpg" alt="Example Image" />
+                <v-col cols="12" md="6" class="d-flex justify-center" order="2">
+                    <v-img max-width="1000px" color="blue" src="src/assets/people/group_pic1.jpg" alt="Example Image" />
                 </v-col>
-            </v-row>
-            <v-row class="services-row">
-                <v-col cols="12" md="6">
-                    <img class="services-img" src="../assets/people/group_pic1.jpg" alt="Example Image" />
+                <v-col cols="12" md="6" order-md="3" order="4">
+                    <v-img class="services-img" src="src/assets/people/group_pic1.jpg" alt="Example Image" />
                 </v-col>
-                <v-col cols="12" md="6" class="d-flex align-center">
+                <v-col cols="12" md="6" class="d-flex align-center" order-md="4" order="3">
                     <v-card variant="outlined" class="services-card"
                         title="Travel">
                         <v-card-text>
@@ -30,9 +28,7 @@
                         </v-card-text>
                     </v-card>
                 </v-col>
-            </v-row class="services-row">
-            <v-row>
-                <v-col cols="12" md="6" class="d-flex align-center">
+                <v-col cols="12" md="6" class="d-flex align-center" order="5">
                     <v-card variant="outlined" class="services-card"
                         title="Wood Services">
                         <v-card-text>
@@ -43,8 +39,8 @@
                         </v-card-text>
                     </v-card>
                 </v-col>
-                <v-col cols="12" md="6">
-                    <img class="services-img" src="../assets/people/group_pic1.jpg" alt="Example Image" />
+                <v-col cols="12" md="6" order="6">
+                    <v-img class="services-img" src="src/assets/people/group_pic1.jpg" alt="Example Image" />
                 </v-col>
             </v-row>
         </v-container>

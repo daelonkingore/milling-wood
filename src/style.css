@@ -7,11 +7,20 @@
 
 .services-card {
   border-radius: 20px;
-  background-color: #5a421d /* #644920*/
+  background-color: #645238; /* #644920*/
+  height: 200px;
 }
 
 #services-container {
   max-width: 1250px;
+}
+
+.services-img, .services-row {
+  height: 300px;
+}
+
+.services-row {
+  padding-bottom: 55px;
 }
 
 /* App */

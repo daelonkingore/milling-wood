@@ -2,8 +2,8 @@
     <div>
         <h2>Services</h2>
         <v-container id="services-container">
-            <v-row>
-                <v-col cols="12" md="6">
+            <v-row class="services-row">
+                <v-col cols="12" md="6" class="d-flex align-center">
                     <v-card variant="outlined" class="services-card"
                         title="Pricing & Dimensions">
                         <v-card-text>
@@ -13,12 +13,15 @@
                         </v-card-text>
                     </v-card>
                 </v-col>
-                <v-col cols="12" md="6">
-                    <span>Insert pic here</span>
+                <v-col cols="12" md="6" class="d-flex justify-center">
+                    <img max-width="100%" contain class="services-img" src="../assets/people/group_pic1.jpg" alt="Example Image" />
                 </v-col>
             </v-row>
-            <v-row>
+            <v-row class="services-row">
                 <v-col cols="12" md="6">
+                    <img class="services-img" src="../assets/people/group_pic1.jpg" alt="Example Image" />
+                </v-col>
+                <v-col cols="12" md="6" class="d-flex align-center">
                     <v-card variant="outlined" class="services-card"
                         title="Travel">
                         <v-card-text>
@@ -27,16 +30,13 @@
                         </v-card-text>
                     </v-card>
                 </v-col>
-                <v-col cols="12" md="6">
-                    <span>Insert pic here</span>
-                </v-col>
-            </v-row>
+            </v-row class="services-row">
             <v-row>
-                <v-col cols="12" md="6">
+                <v-col cols="12" md="6" class="d-flex align-center">
                     <v-card variant="outlined" class="services-card"
                         title="Wood Services">
                         <v-card-text>
-                            <br>Can mill up to [dimension-needed]
+                            Can mill up to [dimension-needed]
                             <br>This is a a one man milling operation, so we <b>do not offer tree felling services.</b>
                             However, if you have a tree down or logs to process, please contact us!
                             <br>We offer milling on-site, we can take your logs, or you can drop them off to mill. 
@@ -44,7 +44,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6">
-                    <span>Insert pic here</span>
+                    <img class="services-img" src="../assets/people/group_pic1.jpg" alt="Example Image" />
                 </v-col>
             </v-row>
         </v-container>

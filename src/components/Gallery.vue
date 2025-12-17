@@ -4,11 +4,13 @@ const woodSlabsImgs = Object.keys(import.meta.glob('../assets/wood-slabs/*.{jpg,
 const woodRoundsImgs = Object.keys(import.meta.glob('../assets/wood-rounds/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
 const peopleImgs = Object.keys(import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
 const workingImgs = Object.keys(import.meta.glob('../assets/working/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
+const submittedImgs = Object.keys(import.meta.glob('../assets/submitted/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
 
 const collections = [{collectionTitle: 'Wood Slabs', collectionValue: woodSlabsImgs}, 
                      {collectionTitle: 'Wood Rounds', collectionValue: woodRoundsImgs},
-                     {collectionTitle: 'Customer Creations', collectionValue: peopleImgs},
-                     {collectionTitle: 'Milling in Action', collectionValue: workingImgs},];
+                     {collectionTitle: 'Customer Creations', collectionValue: submittedImgs},
+                     {collectionTitle: 'Milling in Action', collectionValue: workingImgs},
+                     {collectionTitle: 'The People Behind it', collectionValue: peopleImgs},];
 let selectedCollection = ref('Wood Slabs');
 let imgForDialog = ref(null);
 let dialogVisible = ref(false);

@@ -8,7 +8,9 @@ import Gallery from './Gallery.vue'
 </script>
 
 <template>
-    <h1>Milling By Darrell</h1><br>
+    <div>
+        <v-img src="src/assets/logo.png" width="250px"></v-img>
+    </div>
 
     <div class="bottom-spacing">
         <Gallery></Gallery>

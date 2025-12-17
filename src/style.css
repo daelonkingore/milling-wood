@@ -1,26 +1,52 @@
-/* Services */
-
-.v-card-text {
-  height: 115px;
-  overflow-y: auto;
+/* Paragraph classes */
+.p-container {
+    text-align: center;
 }
 
-.services-card {
-  border-radius: 20px;
-  background-color: #644920; /* #644920*/
-  height: 200px;
-  width: 100%;
+.p-text {
+  width: 70%;
+  background-color: rgba(99, 64, 19, 0.6);
+  border-radius: 15px;
 }
 
-.services-img {
-  max-height: 300px;
-} 
-
-.services-row > .v-col{
-  width: 400px;
+.p-text-size-lg {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 15px 35px;
+  margin: 45px auto;
+  letter-spacing: 1.2px;
 }
 
-/* App */
+.p-text-size-sm {
+  font-size: .9rem;
+  line-height: 1.1;
+  padding: 10px 10px;
+  margin: 35px auto;
+  letter-spacing: 1px;
+  width: 90%;
+}
+
+/* Header classes */
+
+.loud-header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Misc App Classes */
+
+body {
+  font-family: 'Kedebideri', sans-serif;
+}
+
+.v-application {
+  font-family: 'Kedebideri', sans-serif;
+}
 
 .v-application {
   --v-theme-background: #441010; /* Set a custom background color for the application */

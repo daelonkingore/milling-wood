@@ -26,66 +26,65 @@
                 Bring your wood to us or let us come to your wood, either way, that log doesn't stand a chance against our saws!
             </p>
         </div>
-        <v-container class="services-container" fluid>
-            <v-row class="services-row">
+
+        <div>
+            <h1 class="pb-12">What can we do for you?</h1>
+        </div>
+
+        <v-container>
+            <v-row>
                 <v-col cols="12" md="6" class="flex-and-center" order="1">
                     <v-card variant="outlined" class="background-img-card" id="wood1"
-                        title="Pricing & Dimensions">
+                        title="Milling">
                         <v-card-text class="overflow-card">
                             <div>
-                                We charge <b>$75</b> an hour for logs <b>25 inches or less</b>
-                                <br><b>$100</b> an hour for logs greater than 25 inches.
-                                <br><br></br><b>$100</b> for the chain.
-                                <br><br>2 hour minimum.
+                                Slabs or rounds, whatever you need, we can cut it. We offer custom milling at our location or yours.
+                                <br><br><b>Dimensions</b>
+                                <br>We have saws that can handle logs up to <b>51"</b> wide!
+                                <br><br><b>Pricing</b>
+                                <br><b>$75</b> an hour for logs <b>25 inches or less</b>
+                                <br><b>$100</b> an hour for logs <b>greater than 25 inches</b>
+                                <br>2 hour minimum.
+                                <br></br><b>$100</b> for blade replacement if needed
                             </div>
                         </v-card-text>
                     </v-card>
                 </v-col>
-                <v-col cols="12" md="6" class="flex-and-center imgContainer" order="2">
-                    <v-img class="services-img" src="src/assets/wood-slabs/bigwood.jpg" alt="Example Image" />
+                <v-col cols="12" md="6" class="flex-and-center" order="2">
+                    <v-img class="services-img" id="services-img1" src="src/assets/people/men-working3.png" rounded="lg" />
                 </v-col>
-                <v-col cols="12" md="6" order-md="3" order="4">
-                    <v-img class="services-img" src="src/assets/logo.png" alt="Example Image" />
+                <v-col cols="12" md="6" class="flex-and-center" order="4" order-md="3" rounded="lg">
+                    <v-img rounded class="services-img" id="services-img2" src="src/assets/wood-slabs/slabs_on_trailer_chainsaw.jpg" />
                 </v-col>
-                <v-col cols="12" md="6" class="flex-and-center" order-md="4" order="3">
+                <v-col cols="12" md="6" class="flex-and-center" order="3" order-md="4">
                     <v-card variant="outlined" class="background-img-card" id="wood2"
-                        title="Travel Limits">
-                        <v-card-text class="overflow-card pt-4">
+                        title="Our Travel Limits">
+                        <v-card-text class="overflow-card" >
                             <div>
-                                <b>If the job is outside of the Springfield, Ozark, or Nixa MO area</b>:
-                                <br>Travel expenses are added based on gas and time taken.
+                                We will travel to you, but we can only reach so far
+                                <br><br><b>If the job is outside of the Springfield, Ozark, or Nixa MO area</b>:
+                                <br>Travel expenses are added based on gas and time taken
                                 <br><br><b>If travel time is longer than 2 hours</b>:
-                                <br>We likely won't make the trip, but feel free to ask.
+                                <br>We likely won't make the trip, but feel free to ask
                             </div>
                         </v-card-text>
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="5">
-                    <v-card variant="outlined" class="background-img-card" id="wood3"
-                        title="Wood Services">
-                        <v-card-text class="overflow-card">
-                            <b>Your Location:</b>
-                            <br>We can mill logs up to 51 inches in diameter with our portable mill at your chosen location.
-                            <br><br><b>Homebase:</b>
-                            <br>Our big sawmill can mill up to 30 inches, but we can always use the 51 inch saw at home too!
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col cols="12" md="6" order="6">
-                    <v-img class="services-img" src="src/assets/people/group_pic1.jpg" alt="Example Image" />
-                </v-col>
-                <v-col cols="12" md="6" class="flex-and-center" order="7" order-md="8">
                     <v-card variant="outlined" id="disclaimer" class="background-img-card"
-                        title="Disclaimer">
+                        title="Frequently Asked Questions">
                         <v-card-text>
-                            This is a a one man milling operation, so <b>we do not offer tree felling services.</b>
-                            <br><br><b>We only offer raw lumber</b>. We do not sand, stain, or treat our wood in any way.
+                            <b>Will you cut the tree down before milling it?</b>
+                            <br>Our passions is in milling, so <b>we do not offer tree felling services.</b>
+                            <br><br><b>Do you sand or treat the wood?</b>
+                            <br>We only offer raw lumber and milling services. We do not sand, stain, or treat our wood in any way.
                             Part of the fun is doing it yourself!
+
                         </v-card-text>
                     </v-card>
                 </v-col>
-                <v-col cols="12" md="6" order="8" order-md="7">
-                    <v-img class="services-img" src="src/assets/people/group_pic1.jpg" alt="Example Image" />
+                <v-col cols="12" md="6" class="flex-and-center" order="6" rounded="lg">
+                    <v-img class="services-img" id="services-img3" src="src/assets/wood-slabs/slabs-stack.jpg" />
                 </v-col>
             </v-row>
         </v-container>
@@ -93,8 +92,21 @@
 </template>
 
 <style scoped>
-.imgContainer {
-    height: 400px;
+.services-img {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#services-img1 {
+    max-width: 560px;
+}
+
+#services-img2 {
+    max-width: 600px;
+}
+
+#services-img3 {
+  max-width: 320px;
 }
 
 .background-img-card {
@@ -111,12 +123,13 @@
   height: 100%;
   background-size: 100%;
   background-position: center;
-  opacity: .6;
+  opacity: .7;
   z-index: -1;
+  background-size: cover;
 }
 
 #wood1::before {
-  background-image: url('src/assets/background-imgs/woodRound1.png');
+  background-image: url('src/assets/background-imgs/woodRound1-2.png');
 }
 
 #wood2::before {
@@ -144,13 +157,13 @@
 .v-card {
     border-radius: 15px;
     background-color: rgba(87, 109, 87, 0.3); /* rgba(116, 111, 111, 0.3); */
-    height: 260px;
+    height: 400px;
     width: 100%;
     max-width: 600px;
 }
 
 .v-card-text {
-    height: 70%;
+    height: 80%;
     overflow-y: auto;
 }
 
@@ -161,10 +174,5 @@
 
 .working-img {
     max-height: 400px;
-}
-
-.services-img {
-  max-height: 300px;
-  border-radius: 25px;
 }
 </style>

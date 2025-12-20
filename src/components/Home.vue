@@ -1,54 +1,54 @@
 <script setup>
-import CarouselElem from './CarouselElem.vue'
-import Description from './Description.vue'
-import Wood from './Wood.vue'
-import Services from './Services.vue'
-import Contacts from './Contacts.vue'
-import Gallery from './Gallery.vue'
+    import CarouselElem from './CarouselElem.vue'
+    import { useDisplay } from 'vuetify';
+    const { mobile } = useDisplay({ mobileBreakpoint: 960 });
 </script>
 
 <template>
-    <div>
-        <v-img src="src/assets/logo.png" width="250px"></v-img>
-    </div>
-
-    <div class="bottom-spacing">
-        <Gallery></Gallery>
-    </div>
-
-    <div class="bottom-spacing">
-        <CarouselElem></CarouselElem>
-    </div>
-
-    <div id="services" class="bottom-spacing">
-        <Services></Services>
-    </div>
-    
-    <div id="wood" class="bottom-spacing">
-        <Wood></Wood>
-    </div>
-    
-    <div id="desc" class="bottom-spacing">
-    <Description></Description>
-    </div>
-
-    <div id="contacts" class="bottom-spacing">
-        <Contacts></Contacts>
-    </div>
-    <a id="top-link" href="#top">Back to Top</a>
+    <v-container>
+        <h1 :class="mobile ? 'pt-6' : 'main-header'" class="header-color">MILLING BY DARRELL</h1>
+        <CarouselElem class="bottom-spacing"></CarouselElem>
+        <v-card flat color="transparent">
+            <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'" >
+                Welcome to Milling By Darrell's showcase site! 
+                <br>
+                Here you can find information on 
+                <router-link to="/services" >
+                    Milling Services, 
+                </router-link>
+                or see some examples of 
+                <router-link to="/wood" >
+                    wood slabs and rounds 
+                </router-link>
+                for your next woodworking project! 
+                <br><br>
+                <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
+                    Visit our Facebook 
+                </a>
+                to see more recent examples of our stock.
+                <br><br>Find out how to contact us 
+                <router-link to="/contacts" >
+                    here.
+                </router-link>
+            </v-card-text>
+        </v-card>
+    </v-container>
 </template>
 
 <style scoped>
-    .bottom-spacing {
-        margin-bottom: 100px;
+    .v-btn {
+        background-color: transparent;
     }
 
-    #top-link {
-        color: #ddd;
+    .main-header {
+        letter-spacing: 7px;
+        font-size: 4rem;
+        font-weight: 650;
     }
 
-    #top-link:hover {
-        color: #ddd;
-        background-color: #5b542d;
+    .header-color {
+        background-color: #5a420f;
+        border-radius: 15px;
+        padding: 20px;
     }
 </style>

@@ -1,10 +1,58 @@
+<script setup>
+    import { useDisplay } from 'vuetify';
+    const { mobile } = useDisplay({ mobileBreakpoint: 960 });
+</script>
+
 <template>
     <div>
-        <h3>Contact Us</h3>
-        <span>
-            Phone:(417)360-2260
-            <br>Email: millingbydarrell@gmail.com
-            <br>Facebook: https://www.facebook.com/p/Milling-By-Darrell-61576174751276/
-        </span>
+        <h2 :class="mobile ? 'pt-6' : 'loud-header'">Let's Talk!</h2>
+        <div class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-md'" >
+            <p>
+                Text or email us to set an appointment, ask a question,
+                or to visit our location and see what we have to offer! 
+                <br>We are based in <b>Ozark, Missouri</b>, so if you live in the Southern Missouri or Northern Arkansas area, you're in luck!
+            </p>
+            <br>
+            <p class="bordered-text">
+                Text us: <b>(417)360-2260</b>
+                <br>Email: <b>millingbydarrell@gmail.com</b>
+            </p>
+            <p>
+                <br>Don't forget, 
+                <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
+                    <b>Visit Our Facebook</b>
+                </a> 
+                to see our most recent stock of wood slabs and rounds, timelapses of our work, and more!
+                <br>
+            </p>
+        </div>
     </div>
+    <v-row class="contacts-pics-row">
+            <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
+                <v-img rounded class="working-img" src="src/assets/wood-slabs/bug_cube.jpg" />
+            </v-col>
+            <v-col cols="12" md="4" class="d-flex justify-center">
+                <v-img cover rounded class="working-img" src="src/assets/people/milling-big-wood.jpg" />
+            </v-col>
+            <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
+                <v-img rounded class="working-img" src="src/assets/wood-slabs/slabs_on_mill.jpg" />
+            </v-col>
+        </v-row>
 </template>
+
+<style scoped>
+.bordered-text {
+    border: rgb(255, 255, 255) solid 2px;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.contacts-pics-row {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+</style>

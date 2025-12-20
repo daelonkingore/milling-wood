@@ -10,7 +10,7 @@ const collections = [{collectionTitle: 'Wood Slabs', collectionValue: woodSlabsI
                      {collectionTitle: 'Wood Rounds', collectionValue: woodRoundsImgs},
                      {collectionTitle: 'Customer Creations', collectionValue: submittedImgs},
                      {collectionTitle: 'Milling in Action', collectionValue: workingImgs},
-                     {collectionTitle: 'The People Behind it', collectionValue: peopleImgs},];
+                     {collectionTitle: 'The People Behind It', collectionValue: peopleImgs},];
 let selectedCollection = ref('Wood Slabs');
 let imgForDialog = ref(null);
 let dialogVisible = ref(false);
@@ -30,7 +30,7 @@ function showDialog(event) {
 </script>
 
 <template>
-  <v-select class="red"
+  <v-select class="shrink"
     label="Choose a Collection"
     :items="collections"
     item-title="collectionTitle"
@@ -56,6 +56,11 @@ function showDialog(event) {
 </template>
 
 <style scoped>
+.shrink {
+  margin: 0 auto;
+  width: 35%;
+  min-width: 250px;
+}
 .transCon {
   background-color: transparent !important;
 }

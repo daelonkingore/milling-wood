@@ -8,13 +8,13 @@
         <h2 :class="mobile ? 'pb-8 pt-6' : 'loud-header'">LET ME MILL FOR YOU</h2>
         <v-row class="services-pics-row">
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="src/assets/working/milling1.jpg" alt="Example Image" />
+                <v-img rounded class="working-img" src="milling-wood/src/assets/working/milling1.jpg" />
             </v-col>
             <v-col cols="12" md="4" class="d-flex justify-center">
-                <v-img cover rounded class="working-img" src="src/assets/working/milling3.jpg" />
+                <v-img cover rounded class="working-img" src="milling-wood/src/assets/working/milling3.jpg" />
             </v-col>
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="src/assets/working/milling2.jpg" />
+                <v-img rounded class="working-img" src="milling-wood/src/assets/working/milling2.jpg" />
             </v-col>
         </v-row>
 
@@ -36,7 +36,7 @@
                 <v-col cols="12" md="6" class="flex-and-center" order="1">
                     <v-card variant="outlined">
                         <v-img
-                            src="src/assets/background-imgs/woodRound1-2.png"
+                            src="milling-wood/src/assets/background-imgs/woodRound1-2.png"
                             gradient="to top right, rgba(100, 115, 100, .3), rgba(50, 50, 50, .4)"
                             height="435px"
                             cover
@@ -59,15 +59,15 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="2">
-                    <v-img class="services-img" id="services-img1" src="src/assets/people/men-working3.png" rounded="lg" />
+                    <v-img class="services-img" id="services-img1" src="milling-wood/src/assets/people/men-working3.png" rounded="lg" />
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="4" order-md="3" rounded="lg">
-                    <v-img rounded class="services-img" id="services-img2" src="src/assets/wood-slabs/slabs_on_trailer_chainsaw.jpg" />
+                    <v-img rounded class="services-img" id="services-img2" src="milling-wood/src/assets/wood-slabs/slabs_on_trailer_chainsaw.jpg" />
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="3" order-md="4">
                     <v-card variant="outlined">
                         <v-img
-                            src="src/assets/background-imgs/woodRound2-2.png"
+                            src="milling-wood/src/assets/background-imgs/woodRound2-2.png"
                             gradient="to top right, rgba(100, 115, 100, .3), rgba(50, 50, 50, .4)"
                             height="435px"
                             cover
@@ -88,7 +88,7 @@
                 <v-col cols="12" md="6" class="flex-and-center" order="5">
                     <v-card variant="outlined">
                         <v-img
-                            src="src/assets/background-imgs/woodRound4.png"
+                            src="milling-wood/src/assets/background-imgs/woodRound4.png"
                             gradient="to top right, rgba(100, 115, 100, .3), rgba(50, 50, 50, .4)"
                             height="435px"
                             cover
@@ -107,7 +107,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="6" rounded="lg">
-                    <v-img class="services-img" id="services-img3" src="src/assets/wood-slabs/slabs-stack-crop.jpg" />
+                    <v-img class="services-img" id="services-img3" src="milling-wood/src/assets/wood-slabs/slabs-stack-crop.jpg" />
                 </v-col>
             </v-row>
         </v-container>

@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-const woodSlabsImgs = Object.keys(import.meta.glob('../assets/wood-slabs/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
-const woodRoundsImgs = Object.keys(import.meta.glob('../assets/wood-rounds/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
-const peopleImgs = Object.keys(import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
-const workingImgs = Object.keys(import.meta.glob('../assets/working/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
-const submittedImgs = Object.keys(import.meta.glob('../assets/submitted/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'src'));
+const woodSlabsImgs = Object.keys(import.meta.glob('../assets/wood-slabs/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
+const woodRoundsImgs = Object.keys(import.meta.glob('../assets/wood-rounds/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
+const peopleImgs = Object.keys(import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
+const workingImgs = Object.keys(import.meta.glob('../assets/working/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
+const submittedImgs = Object.keys(import.meta.glob('../assets/submitted/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
 
 const collections = [{collectionTitle: 'Wood Slabs', collectionValue: woodSlabsImgs}, 
                      {collectionTitle: 'Wood Rounds', collectionValue: woodRoundsImgs},

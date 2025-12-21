@@ -33,13 +33,13 @@
     </div>
     <v-row class="contacts-pics-row">
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="src/assets/wood-slabs/bug_cube.jpg" />
+                <v-img rounded class="working-img" src="milling-wood/src/assets/wood-slabs/bug_cube.jpg" />
             </v-col>
             <v-col cols="12" md="4" class="d-flex justify-center">
-                <v-img cover rounded class="working-img" src="src/assets/people/milling-big-wood.jpg" />
+                <v-img cover rounded class="working-img" src="milling-wood/src/assets/people/milling-big-wood.jpg" />
             </v-col>
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="src/assets/wood-slabs/slabs_on_mill.jpg" />
+                <v-img rounded class="working-img" src="milling-wood/src/assets/wood-slabs/slabs_on_mill.jpg" />
             </v-col>
         </v-row>
 </template>

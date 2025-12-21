@@ -11,8 +11,8 @@
             <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'">
                     I always have a variety of wood slabs and rounds available. 
                     <br>Contact me for more information, and visit 
-                    <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
-                        Facebook 
+                    <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer"> <!-- https://www.facebook.com/p/Milling-By-Darrell-61576174751276/ -->
+                        <b>Visit My Marketplace Listings</b>
                     </a>
                     to see some current stock.
             </v-card-text>

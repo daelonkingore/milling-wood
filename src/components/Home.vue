@@ -22,8 +22,8 @@
                 </router-link>
                 for your next woodworking project! 
                 <br><br>
-                <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
-                    Visit our Facebook 
+                <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer"> <!-- https://www.facebook.com/p/Milling-By-Darrell-61576174751276/ -->
+                    <b>Visit My Marketplace Listings</b>
                 </a>
                 to see more recent examples of my stock.
                 <br><br>Find out how to contact me

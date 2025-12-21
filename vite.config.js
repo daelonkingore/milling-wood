@@ -9,7 +9,4 @@ export default defineConfig({
     vue(),
     vuetify()
   ],
-  optimizeDeps: {
-    include: ['vuetify/styles'],
-  },
 })

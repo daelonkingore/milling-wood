@@ -1,4 +1,9 @@
 <script setup>
+    // images at bottom
+    import bugCube from '@/assets/wood-slabs/bug_cube.jpg'
+    import bigWood from '@/assets/people/milling-big-wood.jpg'
+    import slabsOnMill from '@/assets/wood-slabs/slabs_on_mill.jpg'
+    
     import { useDisplay } from 'vuetify';
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
 </script>
@@ -33,13 +38,13 @@
     </div>
     <v-row class="contacts-pics-row">
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="milling-wood/src/assets/wood-slabs/bug_cube.jpg" />
+                <v-img rounded class="working-img" :src=bugCube />
             </v-col>
             <v-col cols="12" md="4" class="d-flex justify-center">
-                <v-img cover rounded class="working-img" src="milling-wood/src/assets/people/milling-big-wood.jpg" />
+                <v-img cover rounded class="working-img" :src=bigWood />
             </v-col>
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="milling-wood/src/assets/wood-slabs/slabs_on_mill.jpg" />
+                <v-img rounded class="working-img" :src=slabsOnMill />
             </v-col>
         </v-row>
 </template>

@@ -1,4 +1,7 @@
 <script setup>
+  // logo
+  import logo from '@/assets/logo.png'
+
   import { ref, watch } from 'vue'
   import { useDisplay } from 'vuetify';
 
@@ -33,13 +36,13 @@
         <v-app-bar color="#407348" :height="mobile ? 44 : 68">
             <template v-if="mobile">
               <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-              <v-app-bar-title v-if="mobile"><v-img max-width="53" src="src/assets/logo.png" contain/></v-app-bar-title>
+              <v-app-bar-title v-if="mobile"><v-img max-width="53" :src=logo contain/></v-app-bar-title>
               <v-spacer></v-spacer>
             </template>
 
             <v-tabs v-else v-model="tab">
                 <v-tab value="one" id="logo-color" to="/">
-                    <v-img class="" src="src/assets/logo.png" width="85px"/>
+                    <v-img :src=logo width="85px"/>
                 </v-tab>
                 <v-tab v-for="(item, i) in navItems" :key="i" :to="item.link" :value="i">{{ item.title }}</v-tab>
             </v-tabs>

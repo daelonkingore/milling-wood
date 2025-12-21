@@ -1,10 +1,40 @@
 <script setup>
 import { ref } from 'vue';
-const woodSlabsImgs = Object.keys(import.meta.glob('../assets/wood-slabs/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
-const woodRoundsImgs = Object.keys(import.meta.glob('../assets/wood-rounds/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
-const peopleImgs = Object.keys(import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
-const workingImgs = Object.keys(import.meta.glob('../assets/working/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
-const submittedImgs = Object.keys(import.meta.glob('../assets/submitted/*.{jpg,png,jpeg,gif}')).map((key) => key.replace('..', 'milling-wood/src'));
+
+const woodSlabsImgs = Object.values(
+  import.meta.glob('@/assets/wood-slabs/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
+
+const woodRoundsImgs = Object.values(
+  import.meta.glob('@/assets/wood-rounds/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
+
+const peopleImgs = Object.values(
+  import.meta.glob('@/assets/people/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
+
+const workingImgs = Object.values(
+  import.meta.glob('@/assets/working/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
+
+const submittedImgs = Object.values(
+  import.meta.glob('@/assets/submitted/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
 
 const collections = [{collectionTitle: 'Wood Slabs', collectionValue: woodSlabsImgs}, 
                      {collectionTitle: 'Wood Rounds', collectionValue: woodRoundsImgs},

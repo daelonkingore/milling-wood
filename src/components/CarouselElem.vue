@@ -2,16 +2,28 @@
 import 'vue3-carousel/carousel.css'
 
 // people
-const peopleImgFiles = import.meta.glob('../assets/people/*.{jpg,png,jpeg,gif}');
-const peopleImgs = Object.keys(peopleImgFiles).map((key) => key.replace('..', 'milling-wood/src'));
+const peopleImgs = Object.values(
+  import.meta.glob('@/assets/people/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
 
 // submitted
-const submittedImgFiles = import.meta.glob('../assets/submitted/*.{jpg,png,jpeg,gif}');
-const submittedImgs = Object.keys(submittedImgFiles).map((key) => key.replace('..', 'milling-wood/src'));
+const submittedImgs = Object.values(
+  import.meta.glob('@/assets/submitted/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
 
 // working
-const workingImgFiles = import.meta.glob('../assets/working/*.{jpg,png,jpeg,gif}');
-const workingImgs = Object.keys(workingImgFiles).map((key) => key.replace('..', 'milling-wood/src'));
+const workingImgs = Object.values(
+  import.meta.glob('@/assets/working/*.{jpg,png,jpeg,gif}', {
+    eager: true,
+    import: 'default'
+  }).sort()
+);
 
 function shuffle(array) {
   let currentIndex = array.length;

@@ -9,12 +9,12 @@
         <h2 :class="mobile ? 'pt-2' : 'loud-header'">HAVE YOU SEEN MY WOOD?</h2>
         <v-card flat color="transparent">
             <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'">
-                    We always have a variety of wood slabs and rounds available. 
-                    <br>Contact us for more information, and visit our 
+                    I always have a variety of wood slabs and rounds available. 
+                    <br>Contact me for more information, and visit 
                     <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
                         Facebook 
                     </a>
-                    to see some of our current stock.
+                    to see some current stock.
             </v-card-text>
         </v-card>
     </v-container>

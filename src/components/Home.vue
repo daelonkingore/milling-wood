@@ -25,8 +25,8 @@
                 <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
                     Visit our Facebook 
                 </a>
-                to see more recent examples of our stock.
-                <br><br>Find out how to contact us 
+                to see more recent examples of my stock.
+                <br><br>Find out how to contact me
                 <router-link to="/contacts" >
                     here.
                 </router-link>

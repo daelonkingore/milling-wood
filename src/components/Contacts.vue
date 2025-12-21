@@ -8,9 +8,9 @@
         <h2 :class="mobile ? 'pt-6' : 'loud-header'">Let's Talk!</h2>
         <div class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-md'" >
             <p>
-                Text or email us to set an appointment, ask a question,
-                or to visit our location and see what we have to offer! 
-                <br>We are based in <b>Ozark, Missouri</b>, so if you live in the Southern Missouri or Northern Arkansas area, you're in luck!
+                Text or email to set an appointment, ask a question,
+                or to visit my location and see what I have to offer! 
+                <br>I am based in <b>Ozark, Missouri</b>, so if you live in the Southern Missouri or Northern Arkansas area, you're in luck!
             </p>
             <br>
             <p class="bordered-text">
@@ -19,10 +19,14 @@
             </p>
             <p>
                 <br>Don't forget, 
-                <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
-                    <b>Visit Our Facebook</b>
+                <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer"> <!-- https://www.facebook.com/p/Milling-By-Darrell-61576174751276/ -->
+                    <b>Visit My Marketplace Listings</b>
                 </a> 
-                to see our most recent stock of wood slabs and rounds, timelapses of our work, and more!
+                to see my most recent stock of wood slabs and rounds. 
+                <br><br><a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
+                    <b>Visit My Facebook</b>
+                </a>
+                for timelapses of my work, and more!
                 <br>
             </p>
         </div>

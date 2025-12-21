@@ -22,7 +22,7 @@
       link: '/wood',
     },
     {
-      title: 'Contact Us',
+      title: 'Contact Me',
       link: '/contacts',
     },
   ]

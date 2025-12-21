@@ -8,13 +8,13 @@
         <h2 :class="mobile ? 'pb-8 pt-6' : 'loud-header'">LET ME MILL FOR YOU</h2>
         <v-row class="services-pics-row">
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="milling-wood/src/assets/working/milling1.jpg" />
+                <v-img rounded class="working-img" src="src/assets/working/milling1.jpg" />
             </v-col>
             <v-col cols="12" md="4" class="d-flex justify-center">
-                <v-img cover rounded class="working-img" src="milling-wood/src/assets/working/milling3.jpg" />
+                <v-img cover rounded class="working-img" src="src/assets/working/milling3.jpg" />
             </v-col>
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" src="milling-wood/src/assets/working/milling2.jpg" />
+                <v-img rounded class="working-img" src="src/assets/working/milling2.jpg" />
             </v-col>
         </v-row>
 

@@ -12,7 +12,7 @@
     // images next to text boxes
     import menWorking3 from '@/assets/people/men-working3.png'
     import woodSlabsTrailer from '@/assets/wood-slabs/slabs_on_trailer_chainsaw.jpg'
-    import slabsStacked from '@/assets/wood-slabs/slabs-stack-crop.jpg'
+    import slabsOnMill from '@/assets/wood-slabs/slabs-on-mill.jpg'
 
     import { useDisplay } from 'vuetify';
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
@@ -26,10 +26,10 @@
                 <v-img rounded class="working-img" :src=milling1 />
             </v-col>
             <v-col cols="12" md="4" class="d-flex justify-center">
-                <v-img cover rounded class="working-img" :src=milling2 />
+                <v-img cover rounded class="working-img" :src=milling3 />
             </v-col>
             <v-col v-if="!mobile" cols="12" md="4" class="d-flex justify-center">
-                <v-img rounded class="working-img" :src=milling3 />
+                <v-img rounded class="working-img" :src=milling2 />
             </v-col>
         </v-row>
 
@@ -81,7 +81,7 @@
                                              <b>Dimensions</b>
                                         </v-col>
                                         <v-col cols="12">
-                                            At home, my stationary saw can handle logs up to 25" wide. My portable saws can handle logs and <b>51"</b> wide!
+                                            My stationary saw can handle logs up to 25" wide, and my portable saws handle up to <b>51"</b> wide!
                                         </v-col>
                                     </v-row>
                                 </v-container>
@@ -90,7 +90,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="2">
-                    <v-img class="services-img" id="services-img1" :src=menWorking3 rounded="lg" />
+                    <v-img class="services-img" id="services-img1" :src=slabsOnMill rounded="lg" />
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="4" order-md="3" rounded="lg">
                     <v-img rounded class="services-img" id="services-img2" :src=woodSlabsTrailer />
@@ -138,7 +138,7 @@
                     </v-card>
                 </v-col>
                 <v-col cols="12" md="6" class="flex-and-center" order="6" rounded="lg">
-                    <v-img class="services-img" id="services-img3" :src=slabsStacked />
+                    <v-img class="services-img" id="services-img3" :src=menWorking3 />
                 </v-col>
             </v-row>
         </v-container>
@@ -173,18 +173,7 @@
 .services-img {
   border-radius: 15px;
   overflow: hidden;
-}
-
-#services-img1 {
-    max-width: 560px;
-}
-
-#services-img2 {
-    max-width: 600px;
-}
-
-#services-img3 {
-  max-width: 460px;
+  max-width: 600px;
 }
 
 .flex-and-center {

@@ -37,13 +37,13 @@
             <p :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'" class="p-text">
                 Have a downed tree you don't know what to do with?
                 <br>Need custom milling for your project?
-                <br><br>I can take care of it for you!<br><br>
+                <br><br>Slabs, rounds, whatever you need, I can cut it!<br><br>
                 Bring your wood to me or let me come to your there, either way, that log doesn't stand a chance against my saws!
             </p>
         </div>
 
         <div>
-            <h1 class="pb-12">What can I do for you?</h1>
+            <h1 :class="mobile ? 'h2-subheading pb-4' : 'pb-12'">What can I do for you?</h1>
         </div>
 
         <v-container>
@@ -56,19 +56,35 @@
                             height="435px"
                             cover
                         >
-                            <v-card-title>Milling</v-card-title>
-                            <v-card-text class="overflow-card">
-                                <div class="easy-to-see">
-                                    Slabs, rounds, whatever you need, I can cut it. I offer custom milling at my location or yours.
-                                    <br><br><b>Dimensions</b>
-                                    <br>At home, my stationary saw can handle logs up to 25" wide. My portable saws can handle logs and <b>51"</b> wide!
-                                    <br><br><b>Pricing</b>
-                                    <br><b>$75</b> an hour for logs <b>25" wide or less.</b>
-                                    <br><b>$100</b> an hour for logs <b>25" ~ 45" wide.</b>
-                                    <br><b>$125</b> an hour for logs <b>45" wide or more.</b>
-                                    <br><b>2 hour minimum.</b>
-                                    <br></br><b>$100</b> for blade replacement for the chainsaw. <b>$30</b> for the stationary.
-                                </div>
+                            <v-card-title><b>Milling</b></v-card-title>
+                            <v-card-text class="overflow-card" :class="mobile ? 'v-text-small' : 'easy-to-see'">
+                                <v-container>
+                                    <v-row>
+                                        <v-col cols="12">
+                                             <b>Pricing</b> - Based on log width
+                                        </v-col>
+                                        <v-col cols="4" md="4">
+                                            25" or less<br><b>$75</b>
+                                        </v-col>
+                                        <v-col cols="4" md="4">
+                                            Between 25"-45"<br><b>$100</b>
+                                        </v-col>
+                                        <v-col cols="4" md="4">
+                                            45" or more<br><b>$125</b>
+                                        </v-col>
+                                        <v-col cols="12">
+                                            <b>2 hour</b> minimum. <b>$100</b> blade replacement for the chainsaw and <b>$30</b> for the at home stationary saw blade.
+                                        </v-col>
+                                    </v-row>
+                                    <v-row>
+                                        <v-col cols="12">
+                                             <b>Dimensions</b>
+                                        </v-col>
+                                        <v-col cols="12">
+                                            At home, my stationary saw can handle logs up to 25" wide. My portable saws can handle logs and <b>51"</b> wide!
+                                        </v-col>
+                                    </v-row>
+                                </v-container>
                             </v-card-text>
                         </v-img>
                     </v-card>
@@ -87,15 +103,15 @@
                             height="435px"
                             cover
                         >
-                            <v-card-title>My Travel Limits</v-card-title>
-                            <v-card-text class="overflow-card" >
-                                <div class="easy-to-see">
+                            <v-card-title><b>My Travel Limits</b></v-card-title>
+                            <v-card-text :class="mobile ? 'v-text-small' : ' easy-to-see'">
+                                <v-container>
                                     I will travel to you, but I can only reach so far.
                                     <br><br><b>If the job is outside of the Springfield, Ozark, or Nixa MO area</b>:
                                     <br>Travel expenses are added based on gas and time taken.
                                     <br><br><b>If travel time is longer than 2 hours</b>:
                                     <br>I likely won't make the trip, but feel free to ask!
-                                </div>
+                                </v-container>
                             </v-card-text>
                         </v-img>
                     </v-card>
@@ -108,15 +124,15 @@
                             height="435px"
                             cover
                         >
-                            <v-card-title>Frequently Asked Questions</v-card-title>
-                            <v-card-text>
-                                <div class="easy-to-see">
+                            <v-card-title><b>Frequently Asked Questions</b></v-card-title>
+                            <v-card-text :class="mobile ? 'v-text-small' : ' easy-to-see'">
+                                <v-container>
                                     <b>Will you cut the tree down before milling it?</b>
                                     <br>My passion is in milling, so <b>we do not offer tree felling services.</b>
                                     <br><br><b>Do you sand or treat the wood?</b>
                                     <br>I only offer raw lumber and milling services. I do not sand, stain, or treat my wood in any way.
                                     Part of the fun is doing it yourself!
-                                </div>
+                                </v-container>
                             </v-card-text>
                         </v-img>
                     </v-card>
@@ -130,12 +146,28 @@
 </template>
 
 <style scoped>
+.h2-subheading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.v-text-small {
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 1.2;
+  padding-left:0px;
+  padding-right: 0px;
+}
+
+.pricing-border {
+    border: black 1px solid;
+}
+
 .easy-to-see {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.4;
-  /* background-color: rgba(94, 94, 94, 0.3);
-  border-radius: 15px; */
 }
 
 .services-img {
@@ -174,7 +206,7 @@
 }
 
 .v-card-text {
-    height: 80%;
+    height: 90%;
     overflow-y: auto;
 }
 

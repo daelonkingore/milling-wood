@@ -10,11 +10,22 @@
         <v-card flat color="transparent">
             <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'">
                     I always have a variety of wood slabs and rounds available. 
-                    <br>Contact me for more information, and visit 
+                    <br>
+                    <router-link to="/contacts" >
+                        Contact me 
+                    </router-link>
+                    for more information, and 
                     <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer"> <!-- https://www.facebook.com/p/Milling-By-Darrell-61576174751276/ -->
                         <b>Visit My Marketplace Listings</b>
                     </a>
                     to see some current stock.
+                    <div class="smaller-text">
+                        <br>Choose <b>"Customer Creations"</b> from the Collection dropdown below to see what customers have done with our wood!
+                        <br>If you want your creations to be included, simply take a good picture and 
+                        <router-link to="/contacts" >
+                            text or email 
+                        </router-link> it to us.
+                    </div>
             </v-card-text>
         </v-card>
     </v-container>
@@ -22,7 +33,15 @@
 </template>
 
 <style scoped>
+.smaller-text {
+    font-size: 18px;
+}
+
 .loud-header {
     margin-bottom: 0;
+}
+
+.p-text {
+    width: 80%
 }
 </style>

@@ -43,7 +43,7 @@ shuffle(myImages);
 
 <template>
   <div class="center-container carousel-color">
-    <v-carousel id="gallery" show-arrows="hover" cycle hide-delimiters height="80vh">
+    <v-carousel id="gallery" show-arrows="hover" cycle hide-delimiters height="60vh">
       <v-carousel-item v-for="(image, i) in myImages" :key="i" :src="image" contain rounded></v-carousel-item>
     </v-carousel>
   </div>
@@ -51,7 +51,7 @@ shuffle(myImages);
 
 <style scoped>
 #gallery {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   margin-top: 18px;
 }

@@ -38,7 +38,7 @@
                 Have a downed tree you don't know what to do with?
                 <br>Need custom milling for your project?
                 <br><br>Slabs, rounds, whatever you need, I can cut it!<br><br>
-                Bring your wood to me or let me come to your there, either way, that log doesn't stand a chance against my saws!
+                Bring your wood to me or let me come to you, either way, that log doesn't stand a chance against my saws!
             </p>
         </div>
 
@@ -81,7 +81,7 @@
                                              <b>Dimensions</b>
                                         </v-col>
                                         <v-col cols="12">
-                                            My stationary saw can handle logs up to 25" wide, and my portable saws handle up to <b>51"</b> wide!
+                                            My stationary saw can handle logs up to <b>25"</b> wide, and my portable saws handle up to <b>51"</b> wide!
                                         </v-col>
                                     </v-row>
                                 </v-container>

@@ -1,5 +1,13 @@
 <script setup>
 import { ref } from 'vue';
+import { useDisplay } from 'vuetify'
+import { computed } from 'vue'
+
+const { smAndDown } = useDisplay()
+
+const widthSmallOrLarge = computed(() => {
+  return smAndDown.value ? 'dialog-small' : 'dialog-big'
+})
 
 const woodSlabsImgs = Object.values(
   import.meta.glob('@/assets/wood-slabs/*.{jpg,png,jpeg,gif}', {
@@ -44,19 +52,23 @@ const collections = [{collectionTitle: 'Wood Slabs', collectionValue: woodSlabsI
 let selectedCollection = ref('Wood Slabs');
 let imgForDialog = ref(null);
 let dialogVisible = ref(false);
+const dialogWidth = ref(0);
 
-function showDialog(event) {
-  imgForDialog = event.originalTarget.src;
+function showDialog(src) {
+  imgForDialog.value = src;
   dialogVisible.value = true;
 
-  // Pre-load image to get dimensions
-  const img = new Image();
-  img.src = imageUrl;
-  img.onload = () => {
-    const maxWidth = window.innerWidth * 0.8;
-    this.dialogWidth = Math.min(img.width, maxWidth);
+  const preload = new Image();
+  preload.src = src;
+  preload.onload = () => {
+    dialogWidth.value = Math.min(
+      preload.width,
+      window.innerWidth * 0.8
+    );
   };
 }
+
+
 </script>
 
 <template>
@@ -75,22 +87,31 @@ function showDialog(event) {
         md="4"
         lg="3"
       >
-          <v-img rounded d-flex :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image ma-2 pa-2 d-flex justify-center align-center" cover v-on:click="showDialog($event)"/>
+          <v-img rounded d-flex :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image" cover @click="showDialog(image)"/>
       </v-col>
     </v-row>
   </v-container>
 
-  <v-dialog v-model="dialogVisible" class="justify-center align-center rounded-lg" max-width="60%">
+  <v-dialog v-model="dialogVisible" class="justify-center align-center rounded-lg" :class="widthSmallOrLarge">
       <v-img height="90vh" :src="imgForDialog" contain @click="dialogVisible = false;" class="rounded-lg"></v-img>
   </v-dialog>
 </template>
 
 <style scoped>
+.dialog-big {
+  max-width: 60%;
+}
+
+.dialog-small {
+  max-width: 95%;
+}
+
 .shrink {
   margin: 0 auto;
   width: 35%;
   min-width: 250px;
 }
+
 .transCon {
   background-color: transparent !important;
 }

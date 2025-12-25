@@ -15,7 +15,7 @@
             <p>
                 Text or email to set an appointment, ask a question,
                 or to visit my location and see what I have to offer! 
-                <br>I am based in <b>Ozark, Missouri</b>, so if you live in the Southern Missouri or Northern Arkansas area, you're in luck!
+                <br>I am based in <b>Ozark, Missouri</b>, so if you live in Southern Missouri or Northern Arkansas, you're in luck!
             </p>
             <br>
             <p class="bordered-text">
@@ -24,7 +24,7 @@
             </p>
             <p>
                 <br>Don't forget, 
-                <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer"> <!-- https://www.facebook.com/p/Milling-By-Darrell-61576174751276/ -->
+                <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer">
                     <b>Visit My Marketplace Listings</b>
                 </a> 
                 to see my most recent stock of wood slabs and rounds. 

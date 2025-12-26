@@ -14,7 +14,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory('/milling-wood/'),
+  history: createWebHistory(),
   routes
 });
 export default router;

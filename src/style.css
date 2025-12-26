@@ -1,3 +1,66 @@
+/* Paragraph classes */
+.p-container {
+    text-align: center;
+}
+
+.p-text {
+  width: 70%;
+  background-color: rgba(99, 64, 19, 0.6);
+  border-radius: 15px;
+}
+
+.p-text-size-lg {
+  font-size: 1.2rem;
+  font-weight: 450;
+  line-height: 1.4;
+  padding: 15px 35px;
+  margin: 45px auto;
+  letter-spacing: 1.2px;
+}
+
+.p-text-size-md {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  padding: 15px 35px;
+  margin: 45px auto;
+  letter-spacing: 1.2px;
+}
+
+.p-text-size-sm {
+  font-size: .9rem;
+  line-height: 1.1;
+  padding: 10px 10px;
+  margin: 35px auto;
+  letter-spacing: 1px;
+  width: 90%;
+}
+
+/* Header classes */
+
+.loud-header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Misc App Classes */
+
+/* body {
+  font-family: 'Kedebideri', sans-serif;
+} */
+
+.v-application {
+  font-family: 'Inter', sans-serif;
+}
+
+.v-application {
+  --v-theme-background: #441010; /* Set a custom background color for the application */
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -6,20 +69,24 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('assets/stacked-waves-haikei.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white;
+  color: rgb(139, 78, 78);
+  font-size: 18px;
 }
 
 a {
+    color: #adeea4;
+    text-decoration: inherit;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+    color: #80da85;
+}
+
+.flex-and-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
@@ -40,21 +107,15 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0px;
   text-align: center;
 }
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+#background {
+  background-image: url('assets/stacked-waves-haikei.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

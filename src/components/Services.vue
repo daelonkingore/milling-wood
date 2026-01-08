@@ -10,7 +10,7 @@
     import backgroundImg3 from '@/assets/background-imgs/woodRound4.png'
 
     // images next to text boxes
-    import menWorking3 from '@/assets/people/men-working3.png'
+    import menWorking3 from '@/assets/people/men-working3.jpg'
     import woodSlabsTrailer from '@/assets/wood-slabs/slabs_on_trailer_chainsaw.jpg'
     import slabsOnMill from '@/assets/wood-slabs/slabs-on-mill.jpg'
 

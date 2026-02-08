@@ -1,148 +1,26 @@
 <script setup>
-import { ref } from 'vue';
-import { useDisplay } from 'vuetify'
-import { computed } from 'vue'
+import { ref, watch } from 'vue'
+import GallerySelect from './GallerySelect.vue'
+import ImageGallery from './ImageGallery.vue'
 
-const { smAndDown } = useDisplay()
+const images = ref([])
+const selectedFolder = ref(null)
 
-const widthSmallOrLarge = computed(() => {
-  return smAndDown.value ? 'dialog-small' : 'dialog-big'
-})
+watch(
+  selectedFolder,
+  async (folderKey) => {
+    if (!folderKey) return
 
-const woodSlabsImgs = Object.values(
-  import.meta.glob('@/assets/wood-slabs/*.{jpg,png,jpeg,gif}', {
-    eager: true,
-    import: 'default'
-  }).sort()
-);
-
-const woodRoundsImgs = Object.values(
-  import.meta.glob('@/assets/wood-rounds/*.{jpg,png,jpeg,gif}', {
-    eager: true,
-    import: 'default'
-  }).sort()
-);
-
-const peopleImgs = Object.values(
-  import.meta.glob('@/assets/people/*.{jpg,png,jpeg,gif}', {
-    eager: true,
-    import: 'default'
-  }).sort()
-);
-
-const workingImgs = Object.values(
-  import.meta.glob('@/assets/working/*.{jpg,png,jpeg,gif}', {
-    eager: true,
-    import: 'default'
-  }).sort()
-);
-
-const submittedImgs = Object.values(
-  import.meta.glob('@/assets/submitted/*.{jpg,png,jpeg,gif}', {
-    eager: true,
-    import: 'default'
-  }).sort()
-);
-
-const collections = [{collectionTitle: 'Wood Slabs', collectionValue: woodSlabsImgs}, 
-                     {collectionTitle: 'Wood Rounds', collectionValue: woodRoundsImgs},
-                     {collectionTitle: 'Customer Creations', collectionValue: submittedImgs},
-                     {collectionTitle: 'Milling in Action', collectionValue: workingImgs},
-                     {collectionTitle: 'The People Behind It', collectionValue: peopleImgs},];
-let selectedCollection = ref('Wood Slabs');
-let imgForDialog = ref(null);
-let dialogVisible = ref(false);
-const dialogWidth = ref(0);
-
-function showDialog(src) {
-  imgForDialog.value = src;
-  dialogVisible.value = true;
-
-  const preload = new Image();
-  preload.src = src;
-  preload.onload = () => {
-    dialogWidth.value = Math.min(
-      preload.width,
-      window.innerWidth * 0.8
-    );
-  };
-}
-
-
+    const res = await fetch(
+      `/.netlify/functions/cloudinary-images?folder=${folderKey}`
+    )
+    images.value = await res.json()
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
-  <v-select class="shrink"
-    label="Choose a Collection"
-    :items="collections"
-    item-title="collectionTitle"
-    v-model="selectedCollection"
-  ></v-select>
-  <v-container fluid class="bg-surface-variant transCon">
-    <v-row dense>
-      <v-col
-        v-for="(image, index) in collections.find(e => e.collectionTitle === selectedCollection).collectionValue" :key="index"
-        cols="12"
-        sm="6"
-        md="4"
-        lg="3"
-      >
-          <v-img rounded d-flex :src="image" :aspect-ratio="1" alt="Collection Image" class="thumbnail-image" cover @click="showDialog(image)"/>
-      </v-col>
-    </v-row>
-  </v-container>
-
-  <v-dialog v-model="dialogVisible" class="justify-center align-center rounded-lg" :class="widthSmallOrLarge">
-      <v-img height="90vh" :src="imgForDialog" contain @click="dialogVisible = false;" class="rounded-lg"></v-img>
-  </v-dialog>
+  <GallerySelect v-model:folder="selectedFolder" />
+  <ImageGallery :images="images" />
 </template>
-
-<style scoped>
-.dialog-big {
-  max-width: 60%;
-}
-
-.dialog-small {
-  max-width: 95%;
-}
-
-.shrink {
-  margin: 0 auto;
-  width: 35%;
-  min-width: 250px;
-}
-
-.transCon {
-  background-color: transparent !important;
-}
-
-#imgSelect {
-  color: pink;
-  background-color: blue !important;
-}
-
-.maxImgHeight {
-  max-height: 100%;
-}
-
-img {
-  border-radius: 8px;
-  display: block;
-}
-
-.thumbnail-image {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  opacity: 0.9;
-  transition: opacity 0.3s ease-in-out;
-  object-fit: cover;
-  width: 100%;
-}
-
-.thumbnail-image.is-active,
-.thumbnail-image:hover {
-  opacity: 1;
-  border: 1px solid #20532b;
-}
-</style>

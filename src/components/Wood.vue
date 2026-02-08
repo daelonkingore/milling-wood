@@ -29,7 +29,7 @@
             </v-card-text>
         </v-card>
     </v-container>
-    <Gallery></Gallery>
+    <Gallery :can-delete="false"></Gallery>
 </template>
 
 <style scoped>

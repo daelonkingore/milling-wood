@@ -1,6 +1,10 @@
-export async function upload(file, folder) {
+export async function upload(file, folder, token) {
   const sigRes = await fetch('/.netlify/functions/signUpload', {
     method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({ folder }),
   })
 
@@ -13,13 +17,10 @@ export async function upload(file, folder) {
   formData.append('signature', sig.signature)
   formData.append('folder', folder)
 
-  const res = await fetch(
-    `https://api.cloudinary.com/v1_1/${sig.cloudName}/image/upload`,
-    {
-      method: 'POST',
-      body: formData,
-    }
-  )
+  const res = await fetch(`https://api.cloudinary.com/v1_1/${sig.cloudName}/image/upload`, {
+    method: 'POST',
+    body: formData,
+  })
 
   return await res.json()
 }

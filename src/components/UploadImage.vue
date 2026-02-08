@@ -58,9 +58,11 @@ watch(selectedFolder, loadImages, { immediate: true })
 async function uploadImage() {
   if (!file.value || !selectedFolder.value || !user.value) return
 
+  const token = user.value.token.access_token
+
   uploading.value = true
   try {
-    const result = await upload(file.value, selectedFolder.value)
+    const result = await upload(file.value, selectedFolder.value, token)
     images.value.unshift(mapCloudinaryImage(result))
   } finally {
     uploading.value = false
@@ -71,8 +73,14 @@ async function uploadImage() {
 async function delImage(image) {
   if (!user.value) return
 
+  const token = user.value.token.access_token
+
   await fetch('/.netlify/functions/deleteImage', {
     method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({ public_id: image.public_id }),
   })
 

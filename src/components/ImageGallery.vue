@@ -47,8 +47,9 @@ function showDialog(image) {
       lg="3"
     >
       <v-card>
-        <v-img class=" cursor-pointer"
-          :src="image.url"
+        <v-img
+          class="cursor-pointer"
+          :src="`${image.url.replace('/upload/', '/upload/f_auto,q_auto/')}`"
           aspect-ratio="1"
           cover
           @click="showDialog(image)"

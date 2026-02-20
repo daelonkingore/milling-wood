@@ -7,7 +7,7 @@
 <template>
     <v-container>
         <h1 :class="mobile ? 'pt-6 main-header-small' : 'main-header'" class="header-color">MILLING BY DARRELL</h1>
-        <CarouselElem class="bottom-spacing"></CarouselElem>
+        <CarouselElem></CarouselElem>
         <v-card flat color="transparent">
             <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'" >
                 Welcome to Milling By Darrell's showcase site! 

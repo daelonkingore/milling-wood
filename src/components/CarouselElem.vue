@@ -1,5 +1,7 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
+import 'vue3-carousel/carousel.css'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 const images = ref([])
 
@@ -14,7 +16,21 @@ onMounted(async () => {
   const submitted = await submittedRes.json()
   const working = await workingRes.json()
 
-  images.value = [...people, ...submitted, ...working]
+  images.value = [...people, ...submitted, ...working].map(img => ({
+    ...img,
+    orientation: null
+  }))
+
+  images.value.forEach(img => {
+    const testImg = new Image()
+    testImg.src = img.url
+    testImg.onload = () => {
+      img.orientation =
+        testImg.naturalWidth > testImg.naturalHeight
+          ? 'landscape'
+          : 'portrait'
+    }
+  })
 
   shuffle(images.value)
 
@@ -38,41 +54,91 @@ function optimize(url, width = 1200) {
   )
 }
 
+const config = {
+  itemsToShow: 1.9,
+  gap: 0,
+  wrapAround: true,
+  autoplay: 4000,
+  pauseAutoplayOnHover: true,
+  snapAlign: 'center',
+}
 </script>
 
 <template>
-  <div class="center-container carousel-color carousel-size">
-    <v-carousel
-      v-if="images.length"
-      :key="images.length"
-      show-arrows="hover"
-      cycle
-      hide-delimiters
-      height="60vh"
-    >
-      <v-carousel-item
-        v-for="(image, i) in images"
-        :key="i"
-      >
-        <v-img
-          :src="optimize(image.url)"
-          :lazy-src="optimize(image.url, 50)"
-          contain
-        />
-      </v-carousel-item>
-    </v-carousel>
-  </div>
+  <Carousel v-bind="config" class="carousel-size">
+    <Slide v-for="image in images" :key="image.url" :class="`slide-${image.orientation}`">
+      <v-img
+        :src="optimize(image.url)"
+        :lazy-src="optimize(image.url, 50)"
+        contain
+        class="carousel-image"
+      />
+    </Slide>
+
+    <template #addons>
+      <Navigation />
+    </template>
+  </Carousel>
 </template>
 
 <style scoped>
 .carousel-size {
-  max-width: 900px;
+  max-width: 850px;
   margin: 0 auto;
-  margin-top: 18px;
+  margin-top: 8px;
 }
 
 .center-container {
   display: flex;
   justify-content: center;
+}
+
+.carousel__slide {
+  transition: transform .5s ease-in-out, opacity 0.45s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  z-index: 1;
+  transform: scale(0.76);
+}
+
+.carousel__slide--active {
+  opacity: 1;
+  z-index: 10;
+  transform: scale(1);
+}
+
+/* Landscape active boost */
+.carousel__slide--active.slide-landscape .carousel-image {
+  transform: scale(1.5);
+}
+
+/* Portrait active slight boost */
+.carousel__slide--active.slide-portrait .carousel-image {
+  transform: scale(1);
+}
+
+/* Immediately adjacent slides */
+.carousel__slide--prev,
+.carousel__slide--next {
+  transform: scale(0.75);
+  opacity: 0.75;
+  z-index: 5;
+  filter: brightness(0.85);
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.carousel__slide:not(.carousel__slide--active):not(.carousel__slide--prev):not(.carousel__slide--next) {
+  opacity: 0.4;
+}
+
+.carousel__viewport {
+  overflow-x: visible !important;
+  overflow-y: hidden !important;
 }
 </style>

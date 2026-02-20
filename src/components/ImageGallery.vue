@@ -25,14 +25,23 @@ const dialogClass = computed(() =>
 )
 
 function showDialog(image) {
-  imgForDialog.value = image.url
+  // Load high quality only when opened
+  imgForDialog.value = optimize(image.url, 1800)
+
   dialogVisible.value = true
 
   const preload = new Image()
-  preload.src = image.url
+  preload.src = optimize(image.url, 1200)
   preload.onload = () => {
     dialogWidth.value = Math.min(preload.width, window.innerWidth * 0.8)
   }
+}
+
+function optimize(url, width = 800, quality = 'auto') {
+  return url.replace(
+    '/upload/',
+    `/upload/f_auto,q_${quality},w_${width}/`
+  )
 }
 </script>
 
@@ -49,9 +58,11 @@ function showDialog(image) {
       <v-card>
         <v-img
           class="cursor-pointer"
-          :src="`${image.url.replace('/upload/', '/upload/f_auto,q_auto/')}`"
+          :src="optimize(image.url, 600)"
+          :lazy-src="optimize(image.url, 50, 30)"
           aspect-ratio="1"
           cover
+          loading="lazy"
           @click="showDialog(image)"
         />
 
@@ -72,6 +83,7 @@ function showDialog(image) {
       height="90vh"
       :src="imgForDialog"
       contain
+      eager
       @click="dialogVisible = false"
       class="rounded-lg"
     />

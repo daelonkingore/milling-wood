@@ -4,6 +4,7 @@ import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 const images = ref([])
+const currentSlide = ref(0)
 
 onMounted(async () => {
   const [peopleRes, submittedRes, workingRes] = await Promise.all([
@@ -20,17 +21,6 @@ onMounted(async () => {
     ...img,
     orientation: null
   }))
-
-  images.value.forEach(img => {
-    const testImg = new Image()
-    testImg.src = img.url
-    testImg.onload = () => {
-      img.orientation =
-        testImg.naturalWidth > testImg.naturalHeight
-          ? 'landscape'
-          : 'portrait'
-    }
-  })
 
   shuffle(images.value)
 
@@ -54,24 +44,62 @@ function optimize(url, width = 1200) {
   )
 }
 
-const config = {
-  itemsToShow: 1.9,
+function setOrientation(image) {
+  const component = imageRefs[image.url]
+  if (!component?.$el) return
+
+  const img = component.$el.querySelector('img')
+  if (!img) return
+
+  image.orientation =
+    img.naturalWidth > img.naturalHeight
+      ? 'landscape'
+      : 'portrait'
+}
+
+const configLg = {
+  itemsToShow: 2.6,
   gap: 0,
   wrapAround: true,
   autoplay: 4000,
   pauseAutoplayOnHover: true,
   snapAlign: 'center',
 }
+
+const configSm = {
+  itemsToShow: 1.8,
+  gap: 0,
+  wrapAround: true,
+  autoplay: 4000,
+  pauseAutoplayOnHover: true,
+  snapAlign: 'center',
+}
+
+const imageRefs = {}
+
+import { useDisplay } from 'vuetify';
+const { sm, md, lg, xl, xs, mobile } = useDisplay()
+
+function setCarouselConfig() {
+   if (md.value || sm.value || xs.value || mobile.value) {
+    return configSm;
+  } else {
+    return configLg;
+  }
+}
 </script>
 
 <template>
-  <Carousel v-bind="config" class="carousel-size">
-    <Slide v-for="image in images" :key="image.url" :class="`slide-${image.orientation}`">
+  <Carousel v-bind="setCarouselConfig()" class="carousel-size"  v-model="currentSlide">
+    <Slide v-for="(image, index) in images" :key="index" :class="`slide-${image.orientation}`">
       <v-img
+        :ref="el => imageRefs[image.url] = el"
         :src="optimize(image.url)"
         :lazy-src="optimize(image.url, 50)"
         contain
         class="carousel-image"
+        @load="() => setOrientation(image)"
+        eager
       />
     </Slide>
 
@@ -83,9 +111,9 @@ const config = {
 
 <style scoped>
 .carousel-size {
-  max-width: 850px;
+  width: 100%;
+  max-width: 1500px;
   margin: 0 auto;
-  margin-top: 8px;
 }
 
 .center-container {

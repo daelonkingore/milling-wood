@@ -3,6 +3,7 @@
     :src="imageUrl"
     cover
     class="hero-img"
+    eager
   >
     <!-- Optional dark overlay for text readability -->
     <div class="overlay-bg"></div>

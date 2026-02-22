@@ -23,6 +23,7 @@
               :src="imageUrl"
               cover
               class="image"
+              eager
             />
           </div>
 

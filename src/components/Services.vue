@@ -77,7 +77,7 @@
                                 <b>Dimensions</b>
                         </v-col>
                         <v-col cols="12">
-                            My stationary saw can handle logs up to <b>25"</b> wide, and my portable saws handle up to <b>51"</b> wide!
+                            My stationary mill can handle logs up to <b>36"</b> wide, and my portable saws handle up to <b>51"</b> wide!
                         </v-col>
                     </v-row>
                 </v-container>

@@ -34,10 +34,12 @@
 
 <template>
     <h1 :class="mobile ? 'pt-6 main-header-small' : 'main-header'" class="header-color">MILLING BY DARRELL</h1>
-    <v-container fill-height fluid :class="mobile ? 'v-text-small' : 'easy-to-see'">
-        <v-row justify-center align-center>
+    <v-container fill-height fluid class="hero-row">
+        <v-row justify-center align-center no-gutters>
             <HeroCarousel :heroes="heroSlides" />
         </v-row>
+    </v-container>
+    <v-container fill-height fluid :class="mobile ? 'v-text-small' : 'easy-to-see'">
         <ImageWithText style="margin-top: 15px;"
             imageUrl="https://res.cloudinary.com/dubulxjtb/image/upload/v1770526415/wood_slabs2_i7vfqf.jpg"
             :imageLeft="true"
@@ -99,7 +101,14 @@
 
     .v-container {
         margin-bottom: 5px;
-        padding-top: 12px;
+        padding-top: 0px;
+    }
+
+    .hero-row {
+        margin-bottom: 5px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .v-btn {
         background-color: transparent;

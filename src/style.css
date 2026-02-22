@@ -1,17 +1,57 @@
+/* Header classes */
+.main-header {
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .2);
+    letter-spacing: 6px;
+    font-size: 3.0rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+}
+
+.main-header-small {
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header-color {
+    /* background-color: #5a420f;  */
+    background-color: #573e24;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
+}
+
+.v-text-small {
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 1.2;
+  padding-left:0px;
+  padding-right: 0px;
+}
+
+.easy-to-see {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+
 /* Paragraph classes */
 .p-container {
     text-align: center;
 }
 
 .p-text {
-  width: 70%;
-  background-color: rgba(99, 64, 19, 0.6);
+  width: 85%;
+  background-color: rgba(104, 63, 22, 0.6);
   border-radius: 15px;
 }
 
 .p-text-size-lg {
-  font-size: 1.2rem;
-  font-weight: 450;
+  font-size: 1.1rem;
+  font-weight: 400;
   line-height: 1.4;
   padding: 15px 35px;
   margin: 45px auto;
@@ -19,7 +59,7 @@
 }
 
 .p-text-size-md {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;
   padding: 15px 35px;
@@ -49,16 +89,10 @@
 
 /* Misc App Classes */
 
-/* body {
-  font-family: 'Kedebideri', sans-serif;
-} */
-
 .v-application {
   font-family: 'Inter', sans-serif;
-}
-
-.v-application {
-  --v-theme-background: #441010; /* Set a custom background color for the application */
+  --v-theme-background: #0e3b05; /* Set a custom background color for the application */
+  color:#ffffff;
 }
 
 :root {
@@ -69,7 +103,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: rgb(139, 78, 78);
+  color: rgb(187, 187, 187);
   font-size: 18px;
 }
 

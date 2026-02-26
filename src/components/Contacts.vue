@@ -36,7 +36,7 @@
                     <b>Youtube</b>
                 </a> 
                 to see me in action, and 
-                <br><a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.facebook.com/p/Milling-By-Darrell-61576174751276/" target="_blank" rel="noopener noreferrer">
                     <b>Visit My Facebook</b>
                 </a>
                 for timelapses of my work, and more!
@@ -64,6 +64,7 @@
     display: inline-block;
     padding: 15px;
     margin: 10px;
+    line-height: 28px;
 }
 
 .contacts-pics-row {

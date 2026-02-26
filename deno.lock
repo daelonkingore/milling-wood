@@ -12,7 +12,9 @@
     "packageJson": {
       "dependencies": [
         "npm:@mdi/font@^7.4.47",
+        "npm:@unhead/vue@^2.1.7",
         "npm:@vitejs/plugin-vue@6",
+        "npm:@vueuse/head@2",
         "npm:cloudinary@^2.9.0",
         "npm:gh-pages@^6.3.0",
         "npm:heic2any@^0.0.4",

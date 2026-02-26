@@ -1,15 +1,11 @@
 <script setup>
+    import { useHead } from '@vueuse/head'
     // images at top showing milling
     import ImageWithText  from './ImageWithText.vue';
 
     import milling1 from '@/assets/working/milling1.jpg'
     import milling2 from '@/assets/working/milling2.jpg'
     import milling3 from '@/assets/working/milling3.jpg'
-
-    // textbox background images
-    import backgroundImg1 from '@/assets/background-imgs/woodRound1-2.png'
-    import backgroundImg2 from '@/assets/background-imgs/woodRound2-2.png'
-    import backgroundImg3 from '@/assets/background-imgs/woodRound4.png'
 
     // images next to text boxes
     import menWorking3 from '@/assets/people/men-working3.jpg'
@@ -18,6 +14,24 @@
 
     import { useDisplay } from 'vuetify';
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
+
+    useHead({
+        title: 'Services | Milling By Darrell',
+        script: [
+            {
+            type: 'application/ld+json',
+            children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Milling",
+                "provider": {
+                "@type": "LocalBusiness",
+                "name": "Milling By Darrell"
+                }
+            })
+            }
+        ]
+    })
 </script>
 
 <template>
@@ -78,6 +92,10 @@
                         </v-col>
                         <v-col cols="12">
                             My stationary mill can handle logs up to <b>36"</b> wide, and my portable saws handle up to <b>51"</b> wide!
+                            <br><br>
+                            Text: <b>(417)360-2260</b>
+                            <br>
+                            Email: <b>millingbydarrell@gmail.com</b>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -115,6 +133,10 @@
 </template>
 
 <style scoped>
+.p-text {
+    max-width: 1000px;
+}
+
 .h2-subheading {
     font-size: 30px;
     font-weight: 700;

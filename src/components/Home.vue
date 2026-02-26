@@ -1,6 +1,5 @@
 <script setup>
     import { useDisplay } from 'vuetify';
-    import { ref } from 'vue';
     import HeroCarousel  from './HeroCarousel.vue';
     import ImageWithText  from './ImageWithText.vue';
     import slabsOnMill from '@/assets/wood-slabs/slabs_on_mill.jpg'
@@ -63,6 +62,10 @@
                 <b>Visit Marketplace Listings</b>
             </a>
             to see more what I have to offer.
+            <br><br>
+            Text: <b>(417)360-2260</b>
+            <br>
+            Email: <b>millingbydarrell@gmail.com</b>
         </ImageWithText>
         <ImageWithText
             imageUrl="https://res.cloudinary.com/dubulxjtb/image/upload/v1770526388/slabs-against-house_vrnvte.jpg"

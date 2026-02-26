@@ -8,7 +8,7 @@
     <h1 :class="mobile ? 'pt-6 main-header-small' : 'main-header'" class="header-color">HAVE YOU SEEN MY WOOD?</h1>
     <v-container>
         <v-card flat color="transparent">
-            <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm p-text-bigger-width' : 'p-text-size-lg'">
+            <v-card-text class="p-container p-text" :class="mobile ? 'p-text-size-sm' : 'p-text-size-lg'">
                     Below are the examples of the kind of wood I have to offer.
                     <a href="https://www.facebook.com/marketplace/profile/100069335852473/?ref=permalink&mibextid=6ojiHh" target="_blank" rel="noopener noreferrer"> <!-- https://www.facebook.com/p/Milling-By-Darrell-61576174751276/ -->
                         <b>Visit My Marketplace Listings</b>
@@ -45,15 +45,12 @@
     margin-bottom: 0;
 }
 
-.p-text-bigger-width {
-    width: 100%;
-}
-
 .p-text {
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
-.p-container {
+.v-container {
+    padding: 35px 0px;
 }
 </style>

@@ -1,3 +1,22 @@
+<script setup>
+  import { useDisplay } from 'vuetify';
+  const { mobile } = useDisplay({ mobileBreakpoint: 960 });
+  defineProps({
+    text: {
+      type: String,
+      required: true
+    },
+    imageUrl: {
+      type: String,
+      required: true
+    },
+    imageLeft: {
+      type: Boolean,
+      default: false
+    }
+  })
+</script>
+
 <template>
   <v-container fluid max-width="1600px">
     <v-row
@@ -11,7 +30,7 @@
         >
           
           <!-- TEXT BOX -->
-          <div class="text-box">
+          <div class="text-box" :class="mobile ? 'p-text-size-s' : 'p-text-size-l'">
             <p class="ma-0">
               <slot></slot>
             </p>
@@ -33,24 +52,19 @@
   </v-container>
 </template>
 
-<script setup>
-defineProps({
-  text: {
-    type: String,
-    required: true
-  },
-  imageUrl: {
-    type: String,
-    required: true
-  },
-  imageLeft: {
-    type: Boolean,
-    default: false
-  }
-})
-</script>
-
 <style scoped>
+.p-text-size-l {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: .9px;
+}
+
+.p-text-size-s {
+  font-size: .9rem;
+  letter-spacing: .9px;
+  line-height: 1.3;
+}
+
 .v-container {
   padding-left: 0px;
   padding-right: 0px;
@@ -83,7 +97,7 @@ defineProps({
 .text-box {
   background: rgba(40, 40, 40, 0.65); /* slightly transparent dark grey */
   color: white;
-  padding: 32px;
+  padding: 32px 10px;
   border-radius: 12px 0 0 12px;
   z-index: 2;
   align-items: center;

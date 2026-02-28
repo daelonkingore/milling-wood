@@ -59,7 +59,7 @@
         </div>
 
         <div>
-            <h1 :class="mobile ? 'h2-subheading pb-4' : 'pb-12'">What can I do for you?</h1>
+            <h2 :class="mobile ? 'h2-subheading mb-4' : 'loud-header-h2 mb-7'">MILLING SERVICES</h2>
         </div>
 
         <v-container :class="mobile ? 'v-text-small' : 'easy-to-see'">
@@ -67,37 +67,50 @@
                 :imageUrl=slabsOnMill
                 :imageLeft="false"
             >
-                <b>Milling</b>
+                <span class="textbox-title">Milling</span>
+                <hr>
                 <v-container>
-                    <v-row>
-                        <v-col cols="12">
-                                <b>Pricing</b> - Based on log width
-                        </v-col>
-                        <v-col cols="4" md="4">
-                            25" or less<br><b>$75</b>
-                        </v-col>
-                        <v-col cols="4" md="4">
-                            Between 25"-45"<br><b>$100</b>
-                        </v-col>
-                        <v-col cols="4" md="4">
-                            45" or more<br><b>$125</b>
-                        </v-col>
-                        <v-col cols="12">
-                            <b>2 hour</b> minimum. <b>$100</b> blade replacement for the chainsaw and <b>$30</b> for the at home stationary saw blade.
-                        </v-col>
-                    </v-row>
-                    <v-row>
-                        <v-col cols="12">
-                                <b>Dimensions</b>
-                        </v-col>
-                        <v-col cols="12">
-                            My stationary mill can handle logs up to <b>36"</b> wide, and my portable saws handle up to <b>51"</b> wide!
-                            <br><br>
-                            Text: <b>(417)360-2260</b>
+                    <div class="pricing-section ">
+                        <div class="pricing-header">
+                            Pricing<span class="sub"> - Based on log width</span>
+                        </div>
+
+                        <table class="pricing-table">
+                            <tbody>
+                            <tr>
+                                <td>25" or less</td>
+                                <td>$75</td>
+                            </tr>
+                            <tr>
+                                <td>25" - 45"</td>
+                                <td>$100</td>
+                            </tr>
+                            <tr>
+                                <td>45" or more</td>
+                                <td>$125</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="pricing-note">
+                            <strong>2 hour minimum.</strong><br>
+                            $100 blade replacement (chainsaw)  
                             <br>
+                            $30 stationary saw blade replacement
+                        </div>
+
+                        <div class="dimensions">
+                            <strong>Dimensions</strong><span class="sub"> - Max log width</span><br>
+                            Stationary mill: up to <b>36"</b> wide  
+                            <br>
+                            Portable saws: up to <b>51"</b> wide
+                        </div>
+
+                        <div class="contact-info">
+                            Text: <b>(417)360-2260</b><br>
                             Email: <b>millingbydarrell@gmail.com</b>
-                        </v-col>
-                    </v-row>
+                        </div>
+                    </div>
                 </v-container>
             </ImageWithText>
 
@@ -105,8 +118,9 @@
                 :imageUrl=woodSlabsTrailer
                 :imageLeft="true"
             >
-                <b>My Travel Limits</b>
-                <v-container>
+                <span class="textbox-title">Travel Limits</span>
+                <hr>
+                <v-container class="p-text-size p-text-line-height">
                     I will travel to you, but I can only reach so far.
                     <br><br><b>If the job is outside of the Springfield, Ozark, or Nixa MO area</b>:
                     <br>Travel expenses are added based on gas and time taken.
@@ -119,8 +133,9 @@
                 :imageUrl=menWorking3
                 :imageLeft="false"
             >
-                <b>Frequently Asked Questions</b>
-                <v-container>
+                <span class="textbox-title">Frequently Asked Questions</span>
+                <hr>
+                <v-container class="p-text-size p-text-line-height">
                     <b>Will you cut the tree down before milling it?</b>
                     <br>My passion is in milling, so <b>we do not offer tree felling services.</b>
                     <br><br><b>Do you sand or treat the wood?</b>
@@ -133,14 +148,62 @@
 </template>
 
 <style scoped>
-.p-text {
-    max-width: 1000px;
+.p-text-line-height {
+    line-height: 1.5;
 }
 
-.h2-subheading {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.5;
+.pricing-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pricing-header {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sub {
+  font-weight: 400;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+.pricing-table td {
+  padding: 12px 0;
+}
+
+.pricing-table td:last-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.pricing-table tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.pricing-note,
+.dimensions,
+.contact-info {
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+
+.textbox-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.p-text {
+    max-width: 1000px;
 }
 
 .pricing-border {

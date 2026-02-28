@@ -38,11 +38,13 @@
             <HeroCarousel :heroes="heroSlides" />
         </v-row>
     </v-container>
+    <h2 :class="mobile ? 'h2-subheading mb-6' : 'loud-header-h2'">MILLING IN OZARK MISSOURI</h2>
     <v-container fill-height fluid :class="mobile ? 'v-text-small' : 'easy-to-see'">
-        <ImageWithText style="margin-top: 15px;"
+        <ImageWithText style="margin-top: 25px;"
             imageUrl="https://res.cloudinary.com/dubulxjtb/image/upload/v1770526415/wood_slabs2_i7vfqf.jpg"
             :imageLeft="true"
         >
+            <div>
             Milling By Darrell is a small scale milling business in the Christian County area.
             <br><br>
             What started as a passionate hobby quickly turned into a passionate business. 
@@ -66,16 +68,15 @@
             Text: <b>(417)360-2260</b>
             <br>
             Email: <b>millingbydarrell@gmail.com</b>
+        </div>
         </ImageWithText>
         <ImageWithText
             imageUrl="https://res.cloudinary.com/dubulxjtb/image/upload/v1770526388/slabs-against-house_vrnvte.jpg"
             :imageLeft="false"
         >
-            If you need a slab of wood, wood round, mantelpiece, or post, I will cut it.
-            <br><br>
-            If you need a fallen tree removed, I will take it.
-            <br><br>
-            If you need a log milled to size, I will mill it.
+            <span>If you need a slab of wood, wood round, mantelpiece, or post, I will cut it.</span>
+            <span>If you need a fallen tree removed, I will take it.</span>
+            <span>If you need a log milled to size, I will mill it.</span>
         </ImageWithText>
     </v-container>
 </template>

@@ -18,43 +18,37 @@
 </script>
 
 <template>
-  <v-container fluid max-width="1600px">
-    <v-row
-      class="d-flex justify-center align-center"
-      no-gutters
-    >
-      <v-col cols="12">
-        <div
-          class="wrapper"
-          :class="{ 'reverse': imageLeft }"
-        >
-          
-          <!-- TEXT BOX -->
-          <div class="text-box" :class="mobile ? 'p-text-size-s' : 'p-text-size-l'">
-            <p class="ma-0">
-              <slot></slot>
-            </p>
-          </div>
+  <div class="section">
+    <div class="wrapper" :class="{ reverse: imageLeft }">
 
-          <!-- IMAGE -->
-          <div class="image-box">
-            <v-img
-              :src="imageUrl"
-              cover
-              class="image"
-              eager
-            />
-          </div>
+      <!-- TEXT -->
+      <div class="text-box" :class="mobile ? 'p-text-size-s' : 'p-text-size-l'">
+        <slot></slot>
+      </div>
 
-        </div>
-      </v-col>
-    </v-row>
-  </v-container>
+      <!-- IMAGE -->
+      <div class="image-box">
+        <v-img
+          :src="imageUrl"
+          cover
+          eager
+          class="image"
+        />
+      </div>
+
+    </div>
+  </div>
 </template>
 
 <style scoped>
+.section {
+  max-width: 1600px;
+  margin: 0 auto 30px auto;
+  padding: 0px;
+}
+
 .p-text-size-l {
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: .9px;
 }
@@ -65,59 +59,43 @@
   line-height: 1.3;
 }
 
-.v-container {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .wrapper {
   display: flex;
-  align-items: stretch; 
+  align-items: stretch;
 }
 
-.image-box, .text-box {
+.wrapper.reverse {
+  flex-direction: row-reverse;
+}
+
+.image-box,
+.text-box {
   flex: 1;
-  display: flex;
-}
-
-/* IMAGE */
-.image-box {
-  position: relative;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  border-radius: 0 12px 12px 0;
-  /* position: absolute; */ /* on the fence about this look */
-  inset: 0;
+  border-radius: 0 14px 14px 0;
 }
 
-/* TEXT BOX */
+.wrapper.reverse .image {
+  border-radius: 14px 0 0 14px;
+}
+
 .text-box {
-  background: rgba(40, 40, 40, 0.65); /* slightly transparent dark grey */
+  background: rgba(40, 40, 40, 0.7);
   color: white;
   padding: 32px 10px;
   border-radius: 12px 0 0 12px;
-  z-index: 2;
-  align-items: center;
-  justify-content: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* Reverse layout when imageLeft = true */
-.wrapper.reverse {
-  flex-direction: row-reverse;
-}
-
-/* When reversed, adjust border radius */
 .wrapper.reverse .text-box {
   border-radius: 0 12px 12px 0;
-}
-
-/* Reverse image border radius */
-.wrapper.reverse .image {
-  border-radius: 12px 0 0 12px;
 }
 
 /* MOBILE */

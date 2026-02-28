@@ -66,7 +66,7 @@
 }
 
 .p-text-size-sm {
-  font-size: .9rem;
+  font-size: 16px;
   padding: 10px 10px;
   margin: 35px auto;
   width: 100%;
@@ -82,6 +82,32 @@
     font-size: 3.2rem;
     font-weight: 600;
     line-height: 1;
+}
+
+.loud-header-h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    font-size: 2.6rem;
+    font-weight: 650;
+    line-height: 1;
+    background-color: #573e24;
+    padding: 22px;
+    border-radius: 15px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.h2-subheading {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.5;
+    background-color: #573e24;
+    padding: 22px;
+    border-radius: 15px;
+    width: 100%;
+    margin: 0 auto;
+    letter-spacing: 3.5px;
 }
 
 /* Misc App Classes */

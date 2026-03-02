@@ -76,10 +76,12 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <v-container class="py-10">
+  <v-container class="py-10 px-0">
     <v-card class="email-form mx-auto pa-6">
       <v-card-title>Contact Me</v-card-title>
-      <v-card-text>Use this to easily send me an email to set a milling appointment, ask a question, or to visit my location and see what I have to offer!</v-card-text>
+      <v-card-text>
+        Use this to easily send me an email to set a milling appointment, ask a question, or to visit my location and see what I have to offer!
+      </v-card-text>
       <v-form
         ref="formRef"
         name="contact"
@@ -111,7 +113,7 @@ const submitForm = async () => {
           v-model="form.message"
           name="message"
           label="Your Message"
-          rows="4"
+          rows="7"
           :rules="messageRules"
           required
         />

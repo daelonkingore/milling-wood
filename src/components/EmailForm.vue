@@ -16,7 +16,8 @@ const messageRules = [
 
 const form = ref({
   email: '',
-  message: ''
+  message: '',
+  'bot-field': ''
 })
 
 const loading = ref(false)
@@ -41,6 +42,8 @@ const submitForm = async () => {
     return // likely bot (submitted too fast)
   }
 
+  if (form.value['bot-field']) return
+
   const { valid } = await formRef.value.validate()
 
   if (!valid) return
@@ -63,6 +66,7 @@ const submitForm = async () => {
     status.value = "success"
     form.value.email = ''
     form.value.message = ''
+    form.value['bot-field'] = ''
     formRef.value.resetValidation()
   } catch (error) {
     console.error(error)
@@ -94,7 +98,7 @@ const submitForm = async () => {
         <p style="display:none;">
           <label>
             Don't fill this out if you're human:
-            <input name="bot-field" />
+            <input v-model="form['bot-field']" name="bot-field" />
           </label>
         </p>
 

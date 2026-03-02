@@ -40,7 +40,7 @@
     </v-container>
     <h2 :class="mobile ? 'h2-subheading mb-6' : 'loud-header-h2'">MILLING IN OZARK MISSOURI</h2>
     <v-container fill-height fluid :class="mobile ? 'v-text-small' : 'easy-to-see'">
-        <ImageWithText style="margin-top: 25px;"
+        <ImageWithText class="pt-7"
             imageUrl="https://res.cloudinary.com/dubulxjtb/image/upload/v1770526415/wood_slabs2_i7vfqf.jpg"
             :imageLeft="true"
         >

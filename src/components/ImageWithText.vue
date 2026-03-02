@@ -76,6 +76,7 @@
 .image {
   width: 100%;
   height: 100%;
+  max-height: 635px;
   border-radius: 0 14px 14px 0;
 }
 

@@ -28,10 +28,14 @@
       name="contact2"
       method="POST"
       data-netlify="true"
+      data-netlify-recaptcha="true"
+      netlify-honeypot="bot-field"
       hidden
     >
       <input type="hidden" name="form-name" value="contact2" />
-      <input type="text" name="email" />
+      <div data-netlify-recaptcha="true"></div>
+      <input type="text" name="bot-field" />
+      <input type="email" name="email" />
       <textarea name="message"></textarea>
     </form>
     <script type="module" src="src/main.js"></script>

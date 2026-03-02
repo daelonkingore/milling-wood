@@ -53,7 +53,7 @@ const submitForm = async () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "contact2",
+        "form-name": "contact",
         ...form.value
       })
     })
@@ -84,15 +84,13 @@ const submitForm = async () => {
       </v-card-text>
       <v-form
         ref="formRef"
-        name="contact2"
+        name="contact"
         method="POST"
         data-netlify="true"
-        data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
         @submit.prevent="submitForm"
       >
-        <div data-netlify-recaptcha="true"></div>
-        <input type="hidden" name="form-name" value="contact2" />
+        <input type="hidden" name="form-name" value="contact" />
         <p style="display:none;">
           <label>
             Don't fill this out if you're human:

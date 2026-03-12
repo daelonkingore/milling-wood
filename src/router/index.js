@@ -3,7 +3,6 @@ import Home from '../components/Home.vue';
 import Services from '../components/Services.vue';
 import Wood from '../components/Wood.vue';
 import Contacts from '../components/Contacts.vue';
-import Gallery from '../components/Gallery.vue';
 import UploadImage from '../components/UploadImage.vue';
 
 const routes = [
@@ -11,7 +10,6 @@ const routes = [
 { path: '/services', component: Services },
 { path: '/wood', component: Wood },
 { path: '/contacts', component: Contacts },
-{ path: '/gallery', component: Gallery },
 { path: '/admin/upload', component: UploadImage },
 ];
 

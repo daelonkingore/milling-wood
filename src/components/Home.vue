@@ -3,6 +3,17 @@
     import HeroCarousel  from './HeroCarousel.vue';
     import ImageWithText  from './ImageWithText.vue';
     import slabsOnMill from '@/assets/wood-slabs/slabs_on_mill.jpg'
+    import { useHead } from '@vueuse/head'
+
+    useHead({
+        title: 'Wood Milling & Live Edge Slabs in Ozark, MO | Milling By Darrell',
+        meta: [
+            {
+            name: 'description',
+            content: 'Custom wood milling, live edge slabs, and dimensional lumber in Ozark, Springfield, and Nixa Missouri.'
+            }
+        ]
+    })
     
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
 

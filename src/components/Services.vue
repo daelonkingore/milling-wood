@@ -16,19 +16,31 @@
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
 
     useHead({
-        title: 'Services | Milling By Darrell',
+        title: 'Custom Wood Milling in Ozark & Springfield MO | Milling By Darrell',
+        meta: [
+            {
+            name: 'description',
+            content: 'On-site sawmill services in Ozark, Springfield, and Nixa Missouri. Customer specified dimensions and travel milling available.'
+            }
+        ],
         script: [
             {
-            type: 'application/ld+json',
-            children: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Service",
-                "serviceType": "Milling",
-                "provider": {
-                "@type": "LocalBusiness",
-                "name": "Milling By Darrell"
-                }
-            })
+                type: 'application/ld+json',
+                children: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "Service",
+                    "name": "Wood Milling Services in Ozark",
+                    "serviceType": "Wood Milling",
+                    "areaServed": {
+                        "@type": "City",
+                        "name": "Ozark"
+                    },
+                    "provider": {
+                        "@type": "LocalBusiness",
+                        "name": "Milling By Darrell",
+                        "url": "https://millingbydarrell.com"
+                    }
+                })
             }
         ]
     })

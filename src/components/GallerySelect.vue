@@ -9,6 +9,7 @@ const allowedFolders = [
   'submitted',
   'working',
   'people',
+  'logs-to-mill'
 ]
 
 const folderLabels = {
@@ -17,6 +18,7 @@ const folderLabels = {
   submitted: 'Customer Creations',
   working: 'Milling in Action',
   people: 'The People Behind It',
+  'logs-to-mill': 'Logs to Mill',
 }
 
 const folders = ref([...allowedFolders])

@@ -1,6 +1,7 @@
 <script setup>
     import EmailForm from './EmailForm.vue';
     import ImageWithText  from './ImageWithText.vue';
+    import { useHead } from '@vueuse/head'
 
     // images at bottom
     import bugCube from '@/assets/wood-slabs/bug_cube.jpg'
@@ -9,6 +10,16 @@
     
     import { useDisplay } from 'vuetify';
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
+
+    useHead({
+        title: 'Contact Custom Wood Milling in Ozark, MO | Milling By Darrell',
+        meta: [
+            {
+            name: 'description',
+            content: 'Contact Milling By Darrell for quotes on custom milling, live edge wood slabs and rounds, and dimensional lumber in Ozark, Springfield, and Nixa Missouri.'
+            }
+        ]
+    })
 </script>
 
 <template>

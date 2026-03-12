@@ -1,7 +1,18 @@
 <script setup>
     import Gallery from './Gallery.vue'
     import { useDisplay } from 'vuetify';
+    import { useHead } from '@vueuse/head'
     const { mobile } = useDisplay({ mobileBreakpoint: 960 });
+
+    useHead({
+        title: 'Live Edge Wood Slabs in Ozark & Springfield MO | Milling By Darrell',
+        meta: [
+            {
+            name: 'description',
+            content: 'A variety of live edge wood slabs and wood rounds for woodworking on sale in Ozark, Springfield, and Nixa Missouri.'
+            }
+        ]
+    })
 </script>
 
 <template>

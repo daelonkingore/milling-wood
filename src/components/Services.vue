@@ -106,9 +106,9 @@
 
                         <div class="pricing-note">
                             <strong>2 hour minimum.</strong><br>
-                            $30 stationary saw blade replacement
+                            $40 stationary saw blade replacement
                             <br>
-                            $100 blade replacement (chainsaw)  
+                            $130 blade replacement (chainsaw)  
                         </div>
 
                         <div class="dimensions">

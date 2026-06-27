@@ -8,6 +8,7 @@ const ALLOWED_FOLDERS = [
   'working',
   'people',
   'logs-to-mill',
+  'beams-and-mantles'
 ]
 
 export const handler = async (event) => {

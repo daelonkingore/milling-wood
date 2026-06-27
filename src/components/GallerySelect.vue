@@ -6,19 +6,21 @@ const selectedFolder = ref(null)
 const allowedFolders = [
   'wood-slabs',
   'wood-rounds',
+  'beams-and-mantles',
+  'logs-to-mill',
   'submitted',
   'working',
   'people',
-  'logs-to-mill'
 ]
 
 const folderLabels = {
   'wood-slabs': 'Wood Slabs',
   'wood-rounds': 'Wood Rounds',
+  'beams-and-mantles': 'Beams and Mantles',
+  'logs-to-mill': 'Logs to Mill',
   submitted: 'Customer Creations',
   working: 'Milling in Action',
   people: 'The People Behind It',
-  'logs-to-mill': 'Logs to Mill',
 }
 
 const folders = ref([...allowedFolders])

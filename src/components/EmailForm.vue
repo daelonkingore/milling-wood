@@ -15,8 +15,8 @@ const messageRules = [
 ]
 
 const form = ref({
-  email: '',
-  message: '',
+  milling_customer_email: '',
+  milling_message: '',
   'bot-field': ''
 })
 
@@ -64,8 +64,8 @@ const submitForm = async () => {
     if (!response.ok) throw new Error("Network response was not ok")
 
     status.value = "success"
-    form.value.email = ''
-    form.value.message = ''
+    form.value.milling_customer_email  = ''
+    form.value.milling_message = ''
     form.value['bot-field'] = ''
     formRef.value.resetValidation()
   } catch (error) {
@@ -103,8 +103,8 @@ const submitForm = async () => {
         </p>
 
         <v-text-field
-          v-model="form.email"
-          name="email"
+          v-model="form.milling_customer_email"
+          name="milling_customer_email"
           label="Your Email Address"
           type="email"
           :rules="emailRules"
@@ -112,8 +112,8 @@ const submitForm = async () => {
         />
 
         <v-textarea
-          v-model="form.message"
-          name="message"
+          v-model="form.milling_message"
+          name="milling_message"
           label="Your Message"
           rows="7"
           :rules="messageRules"

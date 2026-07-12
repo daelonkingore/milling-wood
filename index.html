@@ -40,11 +40,20 @@
       name="contact"
       method="POST"
       data-netlify="true"
+      netlify-honeypot="bot-field"
       hidden
     >
+      <input name="bot-field" />
       <input type="hidden" name="form-name" value="contact" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
+      <input 
+        type="email" 
+        name="milling_customer_email" 
+        required
+      />
+      <textarea 
+        name="milling_message"
+        required
+      ></textarea>
     </form>
     <script type="module" src="src/main.js"></script>
   </body>

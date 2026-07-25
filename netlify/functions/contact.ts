@@ -52,6 +52,7 @@ export const handler: Handler = async (event) => {
     //
     const emailRegex =
       /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      console.log(email + " | " + emailRegex.test(email));
 
     if (!email || !emailRegex.test(email)) {
       return {

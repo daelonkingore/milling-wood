@@ -125,22 +125,12 @@ export const handler: Handler = async (event) => {
         };
     }
 
-    // reject multiple consecutive spaces
-    if (/\s{3,}/.test(message)) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({
-            error: "Invalid message."
-            })
-        };
-    }
-
     // reject too many repeated characters
     if (/(.)\1{10,}/.test(message)) {
         return {
             statusCode: 400,
             body: JSON.stringify({
-            error: "Invalid message."
+            error: "Too many repeated characters. Invalid Message."
             })
         };
     }
@@ -167,23 +157,13 @@ export const handler: Handler = async (event) => {
         };
     }
 
-    // reject duplicate punctuation
-    if (/([!?$#@%*])\1{5,}/.test(message)) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({
-            error: "Message appears invalid."
-            })
-        };
-    }
-
     // reject message with too few characters
     const uniqueChars = new Set(message.toLowerCase()).size;
     if (uniqueChars < 8) {
         return {
             statusCode: 400,
             body: JSON.stringify({
-            error: "Message appears invalid."
+            error: "Message not long enough."
             })
         };
     }

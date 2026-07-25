@@ -182,11 +182,9 @@ export const handler: Handler = async (event) => {
     //
     // Forward to Netlify Forms
     //
-
     const params = new URLSearchParams({
       "form-name": "contact",
-      email,
-      message
+      ...data
     });
 
     const response = await fetch(

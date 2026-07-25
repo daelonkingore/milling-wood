@@ -23,6 +23,7 @@ export const handler: Handler = async (event) => {
     const email = data.milling_customer_email?.trim();
     const message = data.milling_message?.trim();
     const botField = data["bot-field"]?.trim();
+    const submittedAt = Number(data.submittedAt);
 
     //
     // Honeypot
@@ -35,8 +36,6 @@ export const handler: Handler = async (event) => {
         })
       };
     }
-
-    const submittedAt = Number(data.submittedAt);
 
     if (!submittedAt || Date.now() - submittedAt < 4000) {
     return {

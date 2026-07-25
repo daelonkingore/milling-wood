@@ -23,11 +23,12 @@ const form = ref({
 
 const loading = ref(false)
 const status = ref(null) // null | success | error
+const errMsg = ref(null)
 
 const clearStatusAfterDelay = () => {
   setTimeout(() => {
     status.value = null
-  }, 6000) // 6 seconds
+  }, 10000) // 10 seconds
 }
 
 const submitForm = async () => {
@@ -43,6 +44,7 @@ const submitForm = async () => {
 
   loading.value = true
   status.value = null
+  errMsg.value = null
 
   try {
     const response = await fetch("/.netlify/functions/contact", {
@@ -70,6 +72,7 @@ const submitForm = async () => {
   } catch (error) {
     console.error(error)
     status.value = "error"
+    errMsg.value = error.message
   } finally {
     loading.value = false
     clearStatusAfterDelay()

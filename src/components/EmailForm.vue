@@ -148,7 +148,7 @@ const submitForm = async () => {
             class="mt-4"
             density="comfortable"
           >
-            {{ errMsg.value ? errMsg : "Message failed. Please try again." }}
+            {{ errMsg ? errMsg : "Message failed. Please try again." }}
           </v-alert>
         </v-fade-transition>
 

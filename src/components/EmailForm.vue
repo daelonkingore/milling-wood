@@ -10,8 +10,8 @@ const emailRules = [
 
 const messageRules = [
   v => !!v || 'Message is required',
-  v => v.length >= 10 || 'Message must be at least 10 characters',
-  v => v.length < 1000 || 'Message must be less than 1000 characters'
+  v => !v || v.length >= 10 || 'Message must be at least 10 characters',
+  v => !v || v.length < 1000 || 'Message must be less than 1000 characters'
 ]
 
 const form = ref({

@@ -71,8 +71,8 @@ const submitForm = async () => {
     formRef.value.resetValidation()
   } catch (error) {
     console.error(error)
-    status.value = "error"
     errMsg.value = error.message
+    status.value = "error"
   } finally {
     loading.value = false
     clearStatusAfterDelay()

@@ -20,8 +20,8 @@ export const handler: Handler = async (event) => {
 
     const data = JSON.parse(event.body);
 
-    const email = data.email?.trim();
-    const message = data.message?.trim();
+    const email = data.milling_customer_email?.trim();
+    const message = data.milling_message?.trim();
     const botField = data["bot-field"]?.trim();
 
     //
@@ -56,7 +56,7 @@ export const handler: Handler = async (event) => {
       return {
         statusCode: 400,
         body: JSON.stringify({
-          error: "Email failed validation." + email
+          error: "Email failed validation."
         })
       };
     }

@@ -51,7 +51,7 @@ export const handler: Handler = async (event) => {
     // Email validation
     //
     const emailRegex =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!email || !emailRegex.test(email)) {
       return {

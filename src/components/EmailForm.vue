@@ -17,17 +17,12 @@ const messageRules = [
 const form = ref({
   milling_customer_email: '',
   milling_message: '',
+  submittedAt: Date.now(),
   'bot-field': ''
 })
 
 const loading = ref(false)
 const status = ref(null) // null | success | error
-
-const encode = (data) => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
 
 const clearStatusAfterDelay = () => {
   setTimeout(() => {
@@ -35,10 +30,8 @@ const clearStatusAfterDelay = () => {
   }, 6000) // 6 seconds
 }
 
-const submittedAt = ref(Date.now())
-
 const submitForm = async () => {
-  if (Date.now() - submittedAt.value < 4000) {  // if submit in under 4 sec
+  if (Date.now() - form.value.submittedAt < 4000) {  // if submit in under 4 sec
     return // likely bot (submitted too fast)
   }
 
@@ -52,21 +45,27 @@ const submitForm = async () => {
   status.value = null
 
   try {
-    const response = await fetch("/", {
+    const response = await fetch("/.netlify/functions/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "contact",
-        ...form.value
-      })
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(form.value)
     })
 
-    if (!response.ok) throw new Error("Network response was not ok")
+    const result = await response.json()
+
+    if (!response.ok) {
+      throw new Error(result.error || "Unknown error")
+    }
 
     status.value = "success"
-    form.value.milling_customer_email  = ''
-    form.value.milling_message = ''
-    form.value['bot-field'] = ''
+    form.value = {
+      email: '',
+      message: '',
+      submittedAt: Date.now(),
+      'bot-field': ''
+    }
     formRef.value.resetValidation()
   } catch (error) {
     console.error(error)

@@ -50,15 +50,13 @@ export const handler: Handler = async (event) => {
     //
     // Email validation
     //
-    const emailRegex =
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      console.log(email + " | " + emailRegex.test(email));
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!email || !emailRegex.test(email)) {
       return {
         statusCode: 400,
         body: JSON.stringify({
-          error: "Email failed validation."
+          error: "Email failed validation." + email
         })
       };
     }

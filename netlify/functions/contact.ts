@@ -57,7 +57,7 @@ export const handler: Handler = async (event) => {
       return {
         statusCode: 400,
         body: JSON.stringify({
-          error: "Invalid email."
+          error: "Email failed validation."
         })
       };
     }
@@ -111,7 +111,7 @@ export const handler: Handler = async (event) => {
         return {
             statusCode: 400,
             body: JSON.stringify({
-            error: "Invalid email."
+            error: "Email too long."
             })
         };
     }
@@ -122,7 +122,7 @@ export const handler: Handler = async (event) => {
         return {
             statusCode: 400,
             body: JSON.stringify({
-            error: "Invalid email."
+            error: "Email not the correct format."
             })
         };
     }
